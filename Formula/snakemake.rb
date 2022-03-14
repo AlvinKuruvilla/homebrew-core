@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/61/a8/cb55f798beac07e8c4660d97f5b24eb913bf343306c4f3ad5db79266dafd/snakemake-7.1.1.tar.gz"
-  sha256 "2b506c8bdf872b5ef98566971a7b8d9bd5f3b858e6efaef326f4f0c3e90052e8"
+  url "https://files.pythonhosted.org/packages/ba/21/5990c38baa7b3f0c1c2189baf365653adc1130bdbb1057b4f2ebc49ffe7b/snakemake-7.2.0.tar.gz"
+  sha256 "ccb4cb8e28d9248d1c2689a68a667ad8855bbe93571abc3c8f56570db091bc27"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "60654ef49cfe0e2e2e81c9fc57c5a446f726007aeb5df3d64e5239dfd656bb8c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "980ec5704d89958c7f7d02488ef3e7905f414fd8aa2d48cc6fdb73546f29c21f"
-    sha256 cellar: :any_skip_relocation, monterey:       "86e7e2a9467ffc24acec91b443f584cd18a0e9f74c2d6b53041ff30c76d7b1ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1054ecd0a7f9a2946b61541bc30af748c5a7687631df2ca0d06c09f8c14e1b81"
-    sha256 cellar: :any_skip_relocation, catalina:       "a027d7e47e9cb381757fa4cd140bb99d8d9faf39e0aebfe94e7853df2b98f2f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbfef99112056c225f4d01f89895ce52d34a85539116d665da70581f28aad5f6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4dadf6ff7aa4d8d27392e077fab52e12e1bc12a0d4d43d5b9d27e08d5a30414"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e9bfe245bbc898baef9a207b209f9861589b7c149904451d878f37b677a385d"
+    sha256 cellar: :any_skip_relocation, monterey:       "1331558e8c0779c5e3c8f9fcef2fb4caf6e81fcea88ddc05ec232e468bfbc7db"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a1252dc6498b3fe7f39c92e70ffb432951630afe919736e8131e7e0bf63f775f"
+    sha256 cellar: :any_skip_relocation, catalina:       "ce3720ec5f8f7f1a8ae2c878d18e56a0b94e32d16a178a5a551a7c0385100f56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef82fa0dffb078a2cfbd32637350422439d0cd65ce7b8d5297fa372e3c0e1652"
   end
 
   depends_on "cbc"
@@ -65,11 +65,6 @@ class Snakemake < Formula
     sha256 "679987caf361a7539d76e584cbeddc311e3aee937877c87346f31debc63e9d06"
   end
 
-  resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4d/cd/3b1244a19d61c4cf5bd65966eef97e6bc41e51fe84110916f26554d6ac8c/filelock-3.6.0.tar.gz"
-    sha256 "9cd540a9352e432c7246a48fe4e8712b10acb1df2ad1f30e8c070b82ae1fed85"
-  end
-
   resource "gitdb" do
     url "https://files.pythonhosted.org/packages/fc/44/64e02ef96f20b347385f0e9c03098659cb5a1285d36c3d17c56e534d80cf/gitdb-4.0.9.tar.gz"
     sha256 "bac2fd45c0a1c9cf619e63a90d62bdc63892ef92387424b855792a6cabe789aa"
@@ -83,11 +78,6 @@ class Snakemake < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/62/08/e3fc7c8161090f742f504f40b1bccbfc544d4a4e09eb774bf40aafce5436/idna-3.3.tar.gz"
     sha256 "9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"
-  end
-
-  resource "ipython_genutils" do
-    url "https://files.pythonhosted.org/packages/e8/69/fbeffffc05236398ebfcfb512b6d2511c622871dca1746361006da310399/ipython_genutils-0.2.0.tar.gz"
-    sha256 "eb2e116e75ecef9d4d228fdc66af54269afa26ab4463042e33785b887c628ba8"
   end
 
   resource "Jinja2" do
@@ -111,8 +101,8 @@ class Snakemake < Formula
   end
 
   resource "nbformat" do
-    url "https://files.pythonhosted.org/packages/e5/bd/847367dcc514b198936a3de8bfaeda1935e67ce369bf0b3e7f3ed4616ae8/nbformat-5.1.3.tar.gz"
-    sha256 "b516788ad70771c6250977c1374fcca6edebe6126fd2adb5a69aa5c2356fd1c8"
+    url "https://files.pythonhosted.org/packages/6d/61/6aea9318a9b323d651823b92e02dc13671b100db061acafed519f8e25f4e/nbformat-5.2.0.tar.gz"
+    sha256 "93df0b9c67221d38fb970c48f6d361819a6c388299a0ef3171bbb912edfe1324"
   end
 
   resource "plac" do
@@ -196,8 +186,8 @@ class Snakemake < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/eb/f6/d81ccf43ac2a3c80ddb6647653ac8b53ce2d65796029369923be06b815b8/wrapt-1.13.3.tar.gz"
-    sha256 "1fea9cd438686e6682271d36f3481a9f3636195578bab9ca3382e2f5f01fc185"
+    url "https://files.pythonhosted.org/packages/c7/b4/3a937c7f8ee4751b38274c8542e02f42ebf3e080f1344c4a2aff6416630e/wrapt-1.14.0.tar.gz"
+    sha256 "8323a43bd9c91f62bb7d4be74cc9ff10090e7ef820e27bfe8815c57e68261311"
   end
 
   resource "yte" do
