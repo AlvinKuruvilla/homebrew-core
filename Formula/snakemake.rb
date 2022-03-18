@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/ba/21/5990c38baa7b3f0c1c2189baf365653adc1130bdbb1057b4f2ebc49ffe7b/snakemake-7.2.0.tar.gz"
-  sha256 "ccb4cb8e28d9248d1c2689a68a667ad8855bbe93571abc3c8f56570db091bc27"
+  url "https://files.pythonhosted.org/packages/fd/72/a0d8f55f70198aefb3bb29c73505112def26976bdbb76d4fdb7100cbb16f/snakemake-7.2.1.tar.gz"
+  sha256 "63036918e4dbdf764cb53e26e136963512219bc9ab08c62f5545835e63376bdf"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4dadf6ff7aa4d8d27392e077fab52e12e1bc12a0d4d43d5b9d27e08d5a30414"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e9bfe245bbc898baef9a207b209f9861589b7c149904451d878f37b677a385d"
-    sha256 cellar: :any_skip_relocation, monterey:       "1331558e8c0779c5e3c8f9fcef2fb4caf6e81fcea88ddc05ec232e468bfbc7db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a1252dc6498b3fe7f39c92e70ffb432951630afe919736e8131e7e0bf63f775f"
-    sha256 cellar: :any_skip_relocation, catalina:       "ce3720ec5f8f7f1a8ae2c878d18e56a0b94e32d16a178a5a551a7c0385100f56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef82fa0dffb078a2cfbd32637350422439d0cd65ce7b8d5297fa372e3c0e1652"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba4ca6b0eb3784d70896b5fba2188621bc150a49e292086e2d3f4bbc85381a98"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e02998fbf00815f2f55fea452083fbebae4f4fd3273f6b46f0ac0722910bc95"
+    sha256 cellar: :any_skip_relocation, monterey:       "cff39c804bde18fb0cdc75d3ff6ba90749c9ed5206daf06f6909c1bd950c3aad"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8cd031c06e9b994243d9c64650cce252e4560b3d9eb4c4f4a8eba78a32d19dab"
+    sha256 cellar: :any_skip_relocation, catalina:       "ce922eb9138789b9d1cd6304fca82bac5c881246359b2083ccf7dcd273e908b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59144761da85b9ab03043c89b78fdabb0536d12759dc50b5e850131ee5f32ae4"
   end
 
   depends_on "cbc"
