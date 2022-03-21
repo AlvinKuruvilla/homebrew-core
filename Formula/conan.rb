@@ -3,18 +3,18 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/46/1e/38ab1cefcbf1c3918309c348c5241b69f8a3959f786302a898635f2c901b/conan-1.46.1.tar.gz"
-  sha256 "f275eab6b4a5225d29d4b3dcd6f8129d31dfe6e11a3a3a87dea4ad10be9ab84a"
+  url "https://files.pythonhosted.org/packages/77/c9/0df4985bb7457629d1d65daea70beb8453c4ddeedad5f42ff7dde14d6d34/conan-1.46.2.tar.gz"
+  sha256 "01f9dc2e6fc180db934a05e2bc20892d55d2af396173139663a4f15d54aa7f61"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de8c0583ec62aceb1dceb0331296465a93d306d13142e249e0a02ee984ae238e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8cc1b6e353df844840c481997136963bb5b0c90302a97e7d2d6c9bec909bcf89"
-    sha256 cellar: :any_skip_relocation, monterey:       "639360bd94fb367dff2fd14a061a7733a6486f1dabaa2125a162c108eaa38551"
-    sha256 cellar: :any_skip_relocation, big_sur:        "26b652e4c5faa79ac9255d8bb70e1554322ca6bd864155b66142f40092559919"
-    sha256 cellar: :any_skip_relocation, catalina:       "bf7f2d228a6b19c357ee0ce2a9e38c23e6558f576316434526bc144be649481c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71c98c3ff1b266a3b8907f59763860ec902385562fdb8362fa01c18f9ab8b937"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43b527db462b6d4816be028294b3e87a3dd3a7ad931530192c0da5650fc23f89"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6367c3449174873322bd61d624830d54002fa7ec7aad186d566dd41bc5e6929"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d77288bd59bff26ce936a5dc311305a7feae951e070dc3563c6d2f92733c259"
+    sha256 cellar: :any_skip_relocation, big_sur:        "71c9c4d1e2aaef84a63768af64fb2b3d75f3fb054aaf887a4c93e75c5b1b3d2e"
+    sha256 cellar: :any_skip_relocation, catalina:       "c7108875125f15f6b72cb781f8614ec28e9eee5a872db866b66e83f74a745240"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce55a3c37e05e5141dd3e5961cb1875263560185a9b3d83552197dd4f82901de"
   end
 
   depends_on "pkg-config" => :build
