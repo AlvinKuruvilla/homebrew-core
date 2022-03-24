@@ -1,18 +1,18 @@
 class Nave < Formula
   desc "Virtual environments for Node.js"
   homepage "https://github.com/isaacs/nave"
-  url "https://github.com/isaacs/nave/archive/v3.3.0.tar.gz"
-  sha256 "4af41bc3863c37bb72f2861ca44fe1f4cd74711cba2bf3ca24e7d102ac8f8298"
+  url "https://github.com/isaacs/nave/archive/v3.3.1.tar.gz"
+  sha256 "c5789615135cf1b0b55c9e7422735bc8af4a2eee717cc09c0d520cfe88cc68a0"
   license "ISC"
   head "https://github.com/isaacs/nave.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "18d0ec2aa28f1556b535d1e1c818fdcc63f29278749ec9a384cf510dcd4e3b97"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "18d0ec2aa28f1556b535d1e1c818fdcc63f29278749ec9a384cf510dcd4e3b97"
-    sha256 cellar: :any_skip_relocation, monterey:       "45ee6cd3fbe703c724da73a37c8fea7bfde5bb59f87c71dea630a5c3a0d1df9f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "45ee6cd3fbe703c724da73a37c8fea7bfde5bb59f87c71dea630a5c3a0d1df9f"
-    sha256 cellar: :any_skip_relocation, catalina:       "45ee6cd3fbe703c724da73a37c8fea7bfde5bb59f87c71dea630a5c3a0d1df9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18d0ec2aa28f1556b535d1e1c818fdcc63f29278749ec9a384cf510dcd4e3b97"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba1b26cb794a07bace9800d71264fceb8b4b9efbddf6d9291399654d98bc88f9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ba1b26cb794a07bace9800d71264fceb8b4b9efbddf6d9291399654d98bc88f9"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f245fcfdd7109a0939d1cb82a854407ac78bedb2bf140966b0d736c69e9a9a4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1f245fcfdd7109a0939d1cb82a854407ac78bedb2bf140966b0d736c69e9a9a4"
+    sha256 cellar: :any_skip_relocation, catalina:       "1f245fcfdd7109a0939d1cb82a854407ac78bedb2bf140966b0d736c69e9a9a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba1b26cb794a07bace9800d71264fceb8b4b9efbddf6d9291399654d98bc88f9"
   end
 
   def install
