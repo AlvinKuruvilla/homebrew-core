@@ -2,8 +2,8 @@ class Influxdb < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
   url "https://github.com/influxdata/influxdb.git",
-      tag:      "v2.1.1",
-      revision: "657e1839de9e8a734abad1207ca28e7d02444207"
+      tag:      "v2.2.0",
+      revision: "a2f85388377fe454257b6da6ad1e723e52b5438b"
   license "MIT"
   head "https://github.com/influxdata/influxdb.git", branch: "master"
 
@@ -14,11 +14,11 @@ class Influxdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7de2e0f730864bf4db5f3af35533d5b8d462def4013cebc1dd9991fab1b59d83"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42c89aa4f7c843b8f99ac406d42d822505ec9cf6d0ecb38d7ce4217f000ee165"
-    sha256 cellar: :any_skip_relocation, monterey:       "371081fed5b98ae9fbb03fee57ce016cb29d39796a35dc9b57bfe0fb8030681b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2ffa689372e99aff4f2366eded763e59d2f1fb9c09f14cfe37ab6fc2cccbcc72"
-    sha256 cellar: :any_skip_relocation, catalina:       "23711126f0cb3c7b89bf68a9f933aec3be44d86cd88ebdd80079bc841c9b5728"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "413f77a266d349110b0f3dd6d31b3b8d504aca072e42700a786f78409ee0c29d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc3011b138388f8fc7b3c7a26ffcb69b0984c76ae887b2a9aaa96df2d48ffc63"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a9344498c796383d0ac7f99ab7b23daa6b215f71275734d52459abe98831ebd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fac54d7d0332e8c8a7dc457f1ad2696ab1af0afbf807da07639448a61475fa48"
+    sha256 cellar: :any_skip_relocation, catalina:       "dee85db3544e4ab2dbd8ae022d8dfe8318e355d8ffa180cd54adcceda16624fd"
   end
 
   depends_on "breezy" => :build
@@ -31,8 +31,8 @@ class Influxdb < Formula
   # NOTE: The version here is specified in the go.mod of influxdb.
   # If you're upgrading to a newer influxdb version, check to see if this needs upgraded too.
   resource "pkg-config-wrapper" do
-    url "https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.9.tar.gz"
-    sha256 "25843e58a3e6994bdafffbc0ef0844978a3d1f999915d6770cb73505fcf87e44"
+    url "https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.11.tar.gz"
+    sha256 "52b22c151163dfb051fd44e7d103fc4cde6ae8ff852ffc13adeef19d21c36682"
   end
 
   # NOTE: The version/URL here is specified in scripts/fetch-ui-assets.sh in influxdb.

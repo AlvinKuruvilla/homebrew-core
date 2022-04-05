@@ -5,7 +5,7 @@ class Csound < Formula
       tag:      "6.17.0",
       revision: "f5b4258794a82c99f7d85f1807c6638f2e80ccac"
   license "LGPL-2.1-or-later"
-  revision 2
+  revision 5
   head "https://github.com/csound/csound.git", branch: "develop"
 
   livecheck do
@@ -14,11 +14,11 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "26a567ef30983a2e5ff47497b950ba77d0e4a2042271d80f853d9f33e56019d6"
-    sha256 arm64_big_sur:  "4b0654e6521c2c61e1c16c1253b70c3a92af1a1fc2f00ed37ac91ec81c674bf8"
-    sha256 monterey:       "04b93f58c7ce216eb4fcf2ffd73adcd18d52264d60e5cfa5d6b275d0bf4948fd"
-    sha256 big_sur:        "828eeb36cc7caa50e15ccdceddb7f6b5f7df921ff54af887015ae08111a448db"
-    sha256 catalina:       "97f66dd1f414aef51e083c0e466497c56c3410a5187db84f2f7581d5c9b3d786"
+    sha256 arm64_monterey: "1175c3fceb71974686a1ca92dd0ba221cbe77bcd46ea114b872b5fbf545d51e9"
+    sha256 arm64_big_sur:  "08207e1b01164ee73f5570933b4522943319277074ba1f4836bbab741bf96a3a"
+    sha256 monterey:       "78443a71a60eebea86219a5bfd612dc2b9fb6d4c70621b4ae83fc192e42b462a"
+    sha256 big_sur:        "8b5d329857d11f3cd4fb193c212d112d16dd328433ae6dd4c7a0218822b06ec3"
+    sha256 catalina:       "0b953aee205007ead4e9e69a2bbcb572b5f2d3fbf1b22e8539ca007c8628dab1"
   end
 
   depends_on "asio" => :build
@@ -54,13 +54,19 @@ class Csound < Formula
   conflicts_with "pkcrack", because: "both install `extract` binaries"
 
   resource "ableton-link" do
-    url "https://github.com/Ableton/link/archive/Link-3.0.3.tar.gz"
-    sha256 "195b46f7a33bb88800de19bb08065ec0235e5a920d203a4b2c644c18fbcaff11"
+    url "https://github.com/Ableton/link/archive/Link-3.0.5.tar.gz"
+    sha256 "74a470c8ae8f9c325e65e981839852e821ec56b980f8b923cb77ca833c4603ed"
   end
 
   resource "csound-plugins" do
     url "https://github.com/csound/plugins/archive/refs/tags/1.0.2.tar.gz"
     sha256 "8c2f0625ad1d38400030f414b92d82cfdec5c04b7dc178852f3e1935abf75d30"
+
+    # Fix build on macOS 12.3+ by replacing old system Python/Python.h with Homebrew's Python.h
+    patch do
+      url "https://github.com/csound/plugins/commit/13800c4dd58e3c214e5d7207180ad7115b4e2f27.patch?full_index=1"
+      sha256 "e088cc300845408f3956f070fa34a900b700c7860678bc6d37f7506d615787a6"
+    end
   end
 
   resource "getfem" do
