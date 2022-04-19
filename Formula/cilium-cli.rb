@@ -1,17 +1,17 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
   homepage "https://cilium.io"
-  url "https://github.com/cilium/cilium-cli/archive/refs/tags/v0.10.4.tar.gz"
-  sha256 "2ba8158450f145fffd9f1a13bd9c3a6379671d68fa1a69fdac610c3f6cdf95bd"
+  url "https://github.com/cilium/cilium-cli/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "6cf3c21a5cce11404a7495197640c1e4da617d709a8fc6b5523aff1cfd9461cc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "01fc397fefe0872b656444ac5da939e02e4cf0cf112ea031b1a09ab400915513"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ede4863c4289f9d5bdbc10e5873a7a697e40beaf714c9f8547137be8275dcb8b"
-    sha256 cellar: :any_skip_relocation, monterey:       "09d097b4d8dfb9cbf9f04eea04cfdb43fddabbb6812da461ca5e1d3a967c8242"
-    sha256 cellar: :any_skip_relocation, big_sur:        "28075de7a74a3c01d0563f6f0e588bf92c106e1fc219d47e6e6c957340201c40"
-    sha256 cellar: :any_skip_relocation, catalina:       "4e39bd20e975410291cad39a6e4a5fc41af5f62d441f41dc59643ac8c0e1f4c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "002639de66b3a04bb56cf96f39465a57755ea59a94b4cf79df630ff5cbcdb00a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d095865ead73248d6a70f76dfe18fb591d42a701b532c52cb1412285cde57735"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "621510a4e6fb232a4eaa54f55c9e90924c28b53178a326c41438df1a4dcd48f7"
+    sha256 cellar: :any_skip_relocation, monterey:       "a16c918fb36ef86ba982d9ff09bbb96bd28e544e54083e6519cd1357d9ac52a1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "40a6bc1948a74d4494e930c123f0ec814ce5c01ab46ec74808e2c2f1fc3d10a8"
+    sha256 cellar: :any_skip_relocation, catalina:       "d8763b7c8dba73de07a25447de89532ae599e92ebdd18150d0b7d0192805fd5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e394325334bd3901491c13acfc653825b593212544ca8d17cb8daf04979499c"
   end
 
   depends_on "go" => :build

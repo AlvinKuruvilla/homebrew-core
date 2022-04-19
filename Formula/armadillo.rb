@@ -1,10 +1,9 @@
 class Armadillo < Formula
   desc "C++ linear algebra library"
   homepage "https://arma.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/arma/armadillo-10.8.2.tar.xz"
-  sha256 "89fdd898bf6bff75f6efc3a301817e4ede752b9a80927fb07ee358b13e353922"
+  url "https://downloads.sourceforge.net/project/arma/armadillo-11.0.1.tar.xz"
+  sha256 "e43d4449376c1fc8b562095431bb82cf9c4ff98a791a22a25d0f96e5e7937c22"
   license "Apache-2.0"
-  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "9e9e53db6a08b645bcd80b65d5a68ac84fbed9d6ef55fa067d20ae20d09a43d2"
-    sha256 cellar: :any,                 arm64_big_sur:  "a6369ff80702a1da78da07fadbc089a2af0d24d320656010fda38f0035cc62a8"
-    sha256 cellar: :any,                 monterey:       "8149e479fec337de6b8ed59ab8e6ed2b992cb559d5aa57a46344c1727aee349f"
-    sha256 cellar: :any,                 big_sur:        "b8d15bf921bfba3889070bd98a583733260ced9ec2afd99149a099ebcc8fef39"
-    sha256 cellar: :any,                 catalina:       "1e269ba24ac375cfcd4be989eaf66904db98037df009c57f446cf3c6c31158f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "139d520f8da492b7fbf43c285aa2d039b4531fc857fcb2827f4ee3ff6b552067"
+    sha256 cellar: :any,                 arm64_monterey: "9cf8238eb713d90d4ffd48bf8ceab7fd6f9e1166d59a24b43c294dbc88ea7163"
+    sha256 cellar: :any,                 arm64_big_sur:  "521c2ed9ebfa08b406387d2aed88515c1c8b59559c0993363a4bf355898981d5"
+    sha256 cellar: :any,                 monterey:       "15d1a52a27e204590a8df6c2ec8630ec4bc5d17098a084327faea1492b7d3c25"
+    sha256 cellar: :any,                 big_sur:        "69105277782eaf31204ea257bd483424d8f1a77f2acfec67e9885351961bc576"
+    sha256 cellar: :any,                 catalina:       "b94b5223a873f8baf78cf9b7acc003e36d515b70dd7e60567c28288bc6062dec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5217c57a3c87a46c1de0cbd6e1816f1595258b830de854a5ae463dda92e8722"
   end
 
   depends_on "cmake" => :build

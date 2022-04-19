@@ -1,17 +1,17 @@
 class SimpleScan < Formula
   desc "GNOME document scanning application"
   homepage "https://gitlab.gnome.org/GNOME/simple-scan"
-  url "https://download.gnome.org/sources/simple-scan/40/simple-scan-40.7.tar.xz"
-  sha256 "7c551852cb5af7d34aa989f8ad5ede3cbe31828cf8dd5aec2b2b6fdcd1ac3d53"
+  url "https://download.gnome.org/sources/simple-scan/42/simple-scan-42.0.tar.xz"
+  sha256 "ac1f857afd0bc8897dd2045023ad7c5713e5ceefca56b0b3cc5e9a4795329586"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_monterey: "c7ef8af7d4e5d34567642084386302374abfb8ef05934046f4f2a0d66effa736"
-    sha256 arm64_big_sur:  "4bae5ca76e7dcf4ce042001134926e693df7130cfc818c86f6e2d60b1b3cdd13"
-    sha256 monterey:       "292f3703162d805bdaa178c94810a2d32092310520f4d5fdaac24a430cc3e85f"
-    sha256 big_sur:        "e0c98f814d427e8841231d9c497def9b7e3a8a8f0dc9adb7842e27e9dc560c29"
-    sha256 catalina:       "2e71257a943ada0dfe2e4fec0ed8ac14c996e64a817ce6f952e7a1968335f06b"
-    sha256 x86_64_linux:   "1c4641ee787593202ce678cc0f3d27a105c0647d5921db31cb83ad7c5d177758"
+    sha256 arm64_monterey: "b559290e29cbb134b2ccb68470e7ae982b0fac1a90445c4d429b7b754e07b63e"
+    sha256 arm64_big_sur:  "84af3f25baf4d5975a25063b5ddda24c6f7c1afcbae3329cdb66f0a84121aea6"
+    sha256 monterey:       "78613570beb02f278ec988af4b3bfca41bf3cb4a66ad4135fe87f20dcd2128e5"
+    sha256 big_sur:        "c7c9e4343201e1d86d01dd97396e66c8994fc1972b3faa451358b28cb523c893"
+    sha256 catalina:       "6da2e4e16e4f9776bea96c7f26360dabf3383aa23fbee848a77ccbe07cb60597"
+    sha256 x86_64_linux:   "c12434254a56faa36fd70d1ce97cd6ed6a43aceae3c1158584200a0aad49963a"
   end
 
   depends_on "itstool" => :build
@@ -25,13 +25,6 @@ class SimpleScan < Formula
   depends_on "libhandy"
   depends_on "sane-backends"
   depends_on "webp"
-
-  # Fix build with Meson 0.60+. Remove when the following commit is in a tagged release:
-  # https://gitlab.gnome.org/GNOME/simple-scan/-/commit/da6626debe00be1a0660f30cf2bf7629186c01d5
-  patch do
-    url "https://gitlab.gnome.org/GNOME/simple-scan/-/commit/da6626debe00be1a0660f30cf2bf7629186c01d5.diff"
-    sha256 "3a96ea449fe1a7b8bee34efdf21ca48f893f0cadb3ba3d4cb742afea3b8c4c03"
-  end
 
   def install
     ENV["DESTDIR"] = "/"

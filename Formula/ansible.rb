@@ -3,18 +3,18 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/b5/6e/5806eafaa71ab5471cfc390089a89c7815ab841657d6517fd72df3d41862/ansible-5.5.0.tar.gz"
-  sha256 "b8a76d737889c9bfd0e6b0f2276dcf8d836da667067a355776f3504d7a66d518"
+  url "https://files.pythonhosted.org/packages/be/ac/323afe010699c446eceb17fd19e4d0a92a40f549b374c967615b7b8637d6/ansible-5.6.0.tar.gz"
+  sha256 "acd30731434154da376ceeeb416ee1541cdfb8ea3c648023a55a34cb3ecaf9f3"
   license "GPL-3.0-or-later"
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "9335b913b927176a5ea445a43eb37201165768a17c2754ef672f1d3c3d17577a"
-    sha256 cellar: :any,                 arm64_big_sur:  "40eb29ae316adf8ecb3a49269f26a7102a53c212645455fcc108608fcadb69a6"
-    sha256 cellar: :any,                 monterey:       "dd02c70a8344b4a2703e2b0bc61656b3de770a05fab7f35ab1cc2b5300c5ab31"
-    sha256 cellar: :any,                 big_sur:        "86d39974cf17265a0d0f03099cabc25c90743e4545cb62c8697a0121ea82a3cd"
-    sha256 cellar: :any,                 catalina:       "f156769397a9a69fb11f8c2e93515e93260221f58e1626b7ff81ea8260d02b8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbe58a74d74cb23feba6fdc0b418a65c4bcecf71a073364fa10f304ec96cc40b"
+    sha256 cellar: :any,                 arm64_monterey: "cf95d3e159ef093aebf6f64e90560f7fedd809adac84e3f247867467d31e7f32"
+    sha256 cellar: :any,                 arm64_big_sur:  "37d2eb76236c4e6a62cba53902e73a9696b887ea8e3ad214bbd19a5133843446"
+    sha256 cellar: :any,                 monterey:       "1fef0b9d659356a4bc78284b4f3f8bf4575ac44ed51a40fbcf1cb5194dc2de40"
+    sha256 cellar: :any,                 big_sur:        "e7f4952311f5e38394174b7da855359e3d78f6ae4657c953cff036187457fcd2"
+    sha256 cellar: :any,                 catalina:       "8eb0165aea4c1929ac0e734fae7a2d6531589a61ced6b849df915958f46ac9aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9278db1cb28e32b18265d1251168253338702424c0c30b284cc7a73d3933816d"
   end
 
   depends_on "pkg-config" => :build
@@ -82,13 +82,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c2/41/1e03f8a19501f86453c9e49c97865fcd4607177afdd4431ce43bd862c7de/boto3-1.21.31.tar.gz"
-    sha256 "7f3f93ee97215862ccd1a216f37deb7d64055c71f826b821805904df7b84ee6a"
+    url "https://files.pythonhosted.org/packages/c4/8d/42578db5fa179cd9d25c65486f1b7e2f20aa75f627ddb9a058665e2b4a0f/boto3-1.21.35.tar.gz"
+    sha256 "ab6e001ba9de1db986634424abff6c79d938c15d0d2fa3ef95eb0939c120b4f6"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e7/0e/582dda95926389c28e063faf9b56d643268dec0881c5144ef9dd5386b3ff/botocore-1.24.31.tar.gz"
-    sha256 "3bb21e3ee5e4de3ed76bb99b4496a46e9b5c82e7b7fdb62702f11dda1b57b769"
+    url "https://files.pythonhosted.org/packages/fd/0c/7be713341c583986a4f49cab0dfef8e263b636ba9a30c30179c3ad136343/botocore-1.24.35.tar.gz"
+    sha256 "36b5422d8f0c312983582b8b4b056c98e1fd6121cb0b2ddb1f67e882e1ae6867"
   end
 
   resource "cachetools" do
@@ -558,11 +558,6 @@ class Ansible < Formula
 
   def install
     ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin"
-
-    if OS.mac? && (MacOS.version <= :sierra)
-      # Fix "ld: file not found: /usr/lib/system/libsystem_darwin.dylib" for lxml
-      ENV["SDKROOT"] = MacOS.sdk_path
-    end
 
     venv = virtualenv_create(libexec, "python3")
     # Install all of the resources declared on the formula into the virtualenv.

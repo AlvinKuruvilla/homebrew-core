@@ -1,18 +1,18 @@
 class Mockery < Formula
   desc "Mock code autogenerator for Golang"
   homepage "https://github.com/vektra/mockery"
-  url "https://github.com/vektra/mockery/archive/v2.10.4.tar.gz"
-  sha256 "f706c1d6be2d620846730eafb14ca6366440f527fb946d55a008392b48299e4a"
+  url "https://github.com/vektra/mockery/archive/v2.11.0.tar.gz"
+  sha256 "96eabb45d12fbb85f3a90169962179ea7919b861d54b00e7ab51684735ef4cac"
   license "BSD-3-Clause"
   head "https://github.com/vektra/mockery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bd76fa8790530fa33ebbbd1b561a0e0249f9026bc962a42c066d00450ee83ca"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "209ccba98c0bbda7289dc230a86205bca79599b4c1345b2ca854419a458d7306"
-    sha256 cellar: :any_skip_relocation, monterey:       "b0dcfe04bb4128849c4faa6af892ce7aae065eefda62320a6573165959dcc061"
-    sha256 cellar: :any_skip_relocation, big_sur:        "89a84b6cc9df9cb667f1ab3119d377ce70c8b5aa5ca32fdc8440977ea3df74e1"
-    sha256 cellar: :any_skip_relocation, catalina:       "94510f3d827babce2173c7579a56932a7ba8429e619d085e3643851a80134dc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71f82d51077667d138df02b6ecb0c9e4bbc4784aafeb23a417b5d8fc1ffd5b12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ab8b976ad97517f1813b7c7716fb58dc29fc718b48e9d4f91a86add51bd7632"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5608b93675d7bcab8dca540822cd32d07547994b43293272cd438864990e85be"
+    sha256 cellar: :any_skip_relocation, monterey:       "96c486090f8ac603be2b394da30c645c84daed8ecf3abf6b3f1e1785be37b84f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "065cf0e124facc07bc969674ff082dca444a015faea86abfd439233c51722848"
+    sha256 cellar: :any_skip_relocation, catalina:       "fda0bd5c599b283bb8641849f7ec767380d8638ce94c20effc1ce3fb16ea02e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7fa4000fc6be280699afd8f3a59a2595cb4077654d9e84d9df59febcb9b55e7"
   end
 
   depends_on "go" => :build

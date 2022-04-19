@@ -4,17 +4,17 @@ class Litani < Formula
   desc "Metabuild system"
   homepage "https://awslabs.github.io/aws-build-accumulator/"
   url "https://github.com/awslabs/aws-build-accumulator.git",
-      tag:      "1.22.0",
-      revision: "9ce9c61b406f0ad78a494cb4a8010546bc392c3d"
+      tag:      "1.24.0",
+      revision: "93cb710327388b69f82cc3bd897d1ad7cddb6eb4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "974f05ee97ef95def637836cd4f328b20c3f8f2794fcf67003d10ffa5bf27e62"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24f7719be167d1ae5fb2c596225a9da71737bb9c8207b1302493b7c09a35d2e0"
-    sha256 cellar: :any_skip_relocation, monterey:       "45ad459474a8cc822591f76322ebddeaee944c1a3c8ea34ed168ae1bf28e3cdf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ae84e96a364fff69cb679e184cb1f530bb6f27e4ff527d6613403f5c44d2d9ab"
-    sha256 cellar: :any_skip_relocation, catalina:       "b24663720a2d7145d8d9a84306e4c91f21be199bcc70aaf47b64da84dcb16d45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06a28d5c9ac356fbdeff7ee254d63b97d639fe76943d5e510eeef2634ec2aa49"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7eda89e682e2f9372871229a9e92c64271349ed498823006329203f3d51e8209"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6947ec0dd008c73a217f38269b58b43f289d191238a1a0426083515efc7188b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ef0f8d2740e63ea3933eaa7529ceb30fc3b290cbfe9a4549e7d5f21a2661a35"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ccb5d43831170ab82b8a3272284b356460bef1e62c89cc09d9391d8734d796cc"
+    sha256 cellar: :any_skip_relocation, catalina:       "55f099f861bd3a7e714898dc75c573684df6a09c1c1b506379f90b91819a14a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8fc1337e149f70d17937875e6dbcab2212c4087fc64487e436f60cb8e17b73c"
   end
 
   depends_on "coreutils" => :build

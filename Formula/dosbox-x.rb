@@ -18,6 +18,7 @@ class DosboxX < Formula
     sha256 cellar: :any, monterey:       "2cf9eef6365101303f9d418f8691b86f7c489cd3f80f4e5856e8313a5efe5d24"
     sha256 cellar: :any, big_sur:        "5802416d35406c5e15ca284f50ca445495940643d27a996bd401606065444278"
     sha256 cellar: :any, catalina:       "62d1c125c7f461f7889b07445ce03d0c7de9993b463854e28ebda7ec822ec013"
+    sha256               x86_64_linux:   "382defe5464ee78c02c00718030417dc92cc42e2346aeda4127022cf90c78238"
   end
 
   depends_on "autoconf" => :build
@@ -25,6 +26,14 @@ class DosboxX < Formula
   depends_on "pkg-config" => :build
   depends_on "fluid-synth"
   depends_on macos: :high_sierra # needs futimens
+
+  on_linux do
+    depends_on "linux-headers@4.15" => :build
+    depends_on "gcc"
+    depends_on "sdl2"
+  end
+
+  fails_with gcc: "5"
 
   def install
     ENV.cxx11
@@ -34,7 +43,8 @@ class DosboxX < Formula
       --disable-dependency-tracking
       --disable-sdltest
     ]
-    system "./build-macosx", *args
+    build_script = OS.mac? ? "./build-macosx" : "./build"
+    system build_script, *args
     system "make", "install"
   end
 

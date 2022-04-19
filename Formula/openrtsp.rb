@@ -1,10 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2022.02.07.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2022.02.07.tar.gz"
+  url "http://www.live555.com/liveMedia/public/live.2022.04.15.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2022.04.15.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "6f0c1f8a71ceb506bcbf969b02b4b0c3697b4e15daeb6dcba9872c8745ce92c6"
+  sha256 "8ada66414fffde6ecb88a380610f4dca27a978288d154b3d25918f2e72f7adbd"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -13,12 +13,12 @@ class Openrtsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "391d9c4024e4229b9bd1e9f1abd3e7b9bb973f91df5800a76e3cd0b4b9c31ea8"
-    sha256 cellar: :any,                 arm64_big_sur:  "bff3dfca03ace204fa0f0382afa7743c0c2c63b3fb5d6d5690de26336b679db2"
-    sha256 cellar: :any,                 monterey:       "e0e6f915701e4321f613ce237bb409d89dcb0daa97a5635ba89077d938ca2ad1"
-    sha256 cellar: :any,                 big_sur:        "54606e26d6707b8fdb2ba9bc12922e4288df3a3f50ea2db120e17c46343ebbc5"
-    sha256 cellar: :any,                 catalina:       "d8f8b92773bca81e1dfe139a9bcdbebe492842cf9304a047d2670514665c7521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d2351635eeec2622f506bb7e1c28cddbb9f8e230cce4a0af08d3aa46f2c9636"
+    sha256 cellar: :any,                 arm64_monterey: "8557c1bfc1711de536db08757c19678cf09262b2673658d0bc8d29ea757c7f94"
+    sha256 cellar: :any,                 arm64_big_sur:  "b43459b39233dcdbe74763d4603c4ad070c2036704ff71019fa9d0e4fca6e792"
+    sha256 cellar: :any,                 monterey:       "47298570ac32ec7a04aa018f3257851a7d06a4e892826715f34e38f236c90e5e"
+    sha256 cellar: :any,                 big_sur:        "f3f4661fd6e7a0645f2caa4c6dfcd16af177d88272e525923f787b149ffcd6e3"
+    sha256 cellar: :any,                 catalina:       "0a0c5c734e91156b494aeee8229df5d06b2be9a6417b9422f1487c5f564a216d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "849d721bb5987869bc1979d479a8d7dfcb1fe910f7de018122747635916135dd"
   end
 
   depends_on "openssl@1.1"

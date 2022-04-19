@@ -230,6 +230,7 @@
   "nox": {
     "exclude_packages": ["six"]
   },
+  "nvchecker": "nvchecker[pypi]",
   "oci-cli": {
     "exclude_packages": ["six"]
   },
@@ -508,6 +509,9 @@
   },
   "volatility": {
     "extra_packages": ["capstone", "pycryptodome", "yara-python"]
+  },
+  "west": {
+    "exclude_packages": ["six"]
   },
   "woob": {
     "exclude_packages": ["pillow", "six"],

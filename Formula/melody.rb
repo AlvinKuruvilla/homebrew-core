@@ -1,17 +1,17 @@
 class Melody < Formula
   desc "Language that compiles to regular expressions"
   homepage "https://yoav-lavi.github.io/melody/book"
-  url "https://github.com/yoav-lavi/melody/archive/refs/tags/v0.13.5.tar.gz"
-  sha256 "05fe3930f5e17de90ca15e515092055f1d3db5f2481ade0861a8bcef9e006c0f"
+  url "https://github.com/yoav-lavi/melody/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "36e3aa6f14f9a94705c2b2f58f19cd8e5f111b43127670eda0318feae141c517"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2fd43c5718b336b2f91ba874320dc3514ec9927d53931e451fba4db22863454"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ec5a6e1da0df92f23cf7d799f772b550567bb236438770e2a6edce8bf39c60f"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fa6ed1f79d7ce9fcbaf2ed04989b4893329fbddcdaefa448c941ab9077344c1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "60444297fe6bc7e2c3af4de2c417cb2903514a2be0e7358c20550c572661e56f"
-    sha256 cellar: :any_skip_relocation, catalina:       "d10f18d8a4a2cac97cbe82fc017aa5f4730ccd64bcb4ec19d2d75b7d811e1535"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b652a7aac81c0f35d21d7d096d3584d63caf839cd69e729f5f0bfd34427510e4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "66a33c5cdf5a2d4d0ed4523db247ae017cc6644e3e36fda9ef38f9b173c2f760"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "861ab424fb5976e38a712ac42e39b616f45b6302192ae99bedf3f6aafcd9c8d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "150a6b87389f20a4e78d4211c9b9b88d9189d01b71033f3b10241d0bfd022212"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6b48e0e6809aa459d81741faba0f23c94a989d4c5d3cb1b739f07f5faa3e0c04"
+    sha256 cellar: :any_skip_relocation, catalina:       "9b749ba32f962ddcd4085e3067aea2428904690b310fa3140d18fbe5e47e25c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2a9f11fed452583c1da9f6bcd1e62874f0cd37a8207520a63d323d0c980abea"
   end
 
   depends_on "rust" => :build
@@ -23,6 +23,6 @@ class Melody < Formula
   test do
     mdy = "regex.mdy"
     File.write mdy, '"#"; some of <word>;'
-    assert_match "#(?:\\w)+", shell_output("melody --no-color #{mdy}")
+    assert_match "#\\w+", shell_output("#{bin}/melody --no-color #{mdy}")
   end
 end

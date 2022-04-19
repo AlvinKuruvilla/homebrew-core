@@ -1,18 +1,18 @@
 class Dprint < Formula
   desc "Pluggable and configurable code formatting platform written in Rust"
   homepage "https://dprint.dev/"
-  url "https://github.com/dprint/dprint/archive/0.24.3.tar.gz"
-  sha256 "e9398ab6c68c08e8a271f4208ad3ba95930a79847c91ad4b113f4e43a0c1986c"
+  url "https://github.com/dprint/dprint/archive/0.25.1.tar.gz"
+  sha256 "d3c65e67cabae0c1ac4f5607baf4495f5197f74ad3e1060ee108f1d267509c70"
   license "MIT"
   head "https://github.com/dprint/dprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "253d08f07f9cfdd8251d328fe6db6d9157a7b0800942f5b8ac4c05781c3fc41e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc067b99731c5a8aab60f55ec1af46a5efe9da0a3a850ae898dede03585d5082"
-    sha256 cellar: :any_skip_relocation, monterey:       "d5573fa4c0a12eb08cfe3ecf6323ade522ab4d01f55eca80fe3924ce9d2d0e37"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c0330695a8b03cf54c6d615477d17aed80180cd25a22820242b37580e7fa8d1e"
-    sha256 cellar: :any_skip_relocation, catalina:       "f3425af774df1dc5d761eb7eca594c078806aa07567af25c7cfaf2048c547743"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9131b827372a524a7b141720908edac8911fcd6f6e076bf6120a411791bcf413"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a21e8a4c48f01064ae605cc5099d58a78058f195f485bd30cdc9d5a1bd9da644"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8dd45bf5f2c175cd35256bfd26223d659b55cac46b6598d4fec288455433eb4"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1e00f4f496e328c99fd39b73b95afd31b7412b6dda3d819ee4f755b1ce848c3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c442917fc3eb84f8ba2864e32af0d75e1fbdc465884b9026d01bef3b5a455574"
+    sha256 cellar: :any_skip_relocation, catalina:       "652fd466f2a29c809a9855304d36c0f023bd8068d20fe441030ed10f17910344"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55805db5d6350c4d41f5032387ce4fb3e9e63d07456475239fadba651ec9e23c"
   end
 
   depends_on "rust" => :build

@@ -1,18 +1,18 @@
 class LeafProxy < Formula
   desc "Lightweight and fast proxy utility"
   homepage "https://github.com/eycorsican/leaf"
-  url "https://github.com/eycorsican/leaf/archive/v0.4.2.tar.gz"
-  sha256 "7d0e25964f069db14b0d49f83ccb11795d09011162f08050c211cb2320acc325"
+  url "https://github.com/eycorsican/leaf/archive/v0.4.4.tar.gz"
+  sha256 "6ce46ba0eb4b357fccc36b3be5bdab32dd6879b53130a496b7a8790a47b14f26"
   license "Apache-2.0"
   head "https://github.com/eycorsican/leaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "931856a6c0361fe9c48803b8d2dcf66f34d88c3f070d32e4a0528249959aab71"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84ea4a852a3c14e9d2149d41236235ecc294241e8b2201a4006b6eac64c41ee3"
-    sha256 cellar: :any_skip_relocation, monterey:       "0954b0fd5638a747ba1512df24e0a36b1fd764f33e968f2038e3acac0403f42b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c7581f846f0f9f59bddb8d09eb98a3e1011b5556efbb9a4faee5d32e9b868201"
-    sha256 cellar: :any_skip_relocation, catalina:       "2739cd2a2245bc2b6a361bd9de8b0f457847214c8c77c138f44b19f448d348ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9958edc844eb18886c230e8f9f627b2bc77fe2e34223e88db2cab18f9f662373"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "acc4a8c8487712d5db2a72194e2c4b03cdd75213a5fecc633506fbc21aa29a10"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e7ef8f08738a67a5265628383a21ab6414fdfd28b5e2f115dd53a88891d2419a"
+    sha256 cellar: :any_skip_relocation, monterey:       "bf017ba320a47d0c6fc3f0a6168eecc192f39cfd98b689e663dbbfe081273fa6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d4d7310f34443db217c7a2e23a7f71e252d19be4a944f926e55c5e786858ce44"
+    sha256 cellar: :any_skip_relocation, catalina:       "342ce1276e6cb762562084e16d43d174faefd2fed2f2f26561b4d525f7a597ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fbf8f868201b7efac5bb66eeeda782993c8ce90e370349704373cf2f7c7ef3b"
   end
 
   depends_on "rust" => :build

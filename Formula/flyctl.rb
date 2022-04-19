@@ -2,18 +2,23 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.0.314",
-      revision: "b05764043e5c998df56a19432f5a09daf2010805"
+      tag:      "v0.0.320",
+      revision: "58aae1e8553414efcc6502ad07c5d61a21443e3e"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "39aab8b774f987ed2265247835e3a6b593f40e896395e5cfcdc1e0a134fdcc1c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "39aab8b774f987ed2265247835e3a6b593f40e896395e5cfcdc1e0a134fdcc1c"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a69f2bbef56edc969d3a09c82090b95037e16e5945ab3a5cfc53da3300b6477"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a69f2bbef56edc969d3a09c82090b95037e16e5945ab3a5cfc53da3300b6477"
-    sha256 cellar: :any_skip_relocation, catalina:       "3a69f2bbef56edc969d3a09c82090b95037e16e5945ab3a5cfc53da3300b6477"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b8f370165bb70490309e0efdb3f66e038ff804c7199324ded88d6adc51c9764"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf875a8b6edbeb0479611e7dfbbe1b8cb553853d9e3a780a28360880f14c45eb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bf875a8b6edbeb0479611e7dfbbe1b8cb553853d9e3a780a28360880f14c45eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "0700934e0aabc0e16d65e905bc4524e8a31873605f7ba87525855f0713e7fd34"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0700934e0aabc0e16d65e905bc4524e8a31873605f7ba87525855f0713e7fd34"
+    sha256 cellar: :any_skip_relocation, catalina:       "0700934e0aabc0e16d65e905bc4524e8a31873605f7ba87525855f0713e7fd34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49f7cbe4fea0824b66a4a3372132952dc53a40b76c1193380a5ee9d9e2ce5352"
   end
 
   depends_on "go" => :build
