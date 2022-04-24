@@ -3,17 +3,17 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://github.com/localstack/localstack"
-  url "https://files.pythonhosted.org/packages/bd/4b/17e585c39e9052d1a991e9122e5e33d9844461d6afc6fed9c762a66c3708/localstack-0.14.2.1.tar.gz"
-  sha256 "2893ede1db93db7871ca922ab4e78caa7e6f0cb23b61a8a0625e1b5566a97faa"
+  url "https://files.pythonhosted.org/packages/f1/c2/7c3b622d07fb650d12275f7f93951c40c771d1d379117d5b02fb3c871201/localstack-0.14.2.3.tar.gz"
+  sha256 "7251a61325b2e1cb740cdd5ba27e91251716b3c0053c43ccc8a089a73ed6d31b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4d781699a330e42eae0a8d9110bc4e18152178d6badd366a3b2421a50063159"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a6bc93218bc629f1419357aef72158d987a3b91fb59b5114f4d9910c5e76218b"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a369794dff2c68e762e3a90ca0602ef6cec889e45b3eb2f312e8c25bfec4fa8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b74334a99b24199e52292508622ffb83b5c037fcb28a3294351a371473ec3cc"
-    sha256 cellar: :any_skip_relocation, catalina:       "47933874ced275f8010912d0793560f80d23ac548eb8a5eb5e9fe3541ab4139a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d447704d9c1bb5fb47d52c5b0e91b77a25d443327d59e85c45e42ca2782773fd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "898b9de9b758dd3ec6ffe4d97f953f8ec736f67160d05006ad4ae751f9fca7d7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38082fd71ff78f1c100dd18137edcefe78ae4a9f7beb6ac1ea0b69f2418ebadc"
+    sha256 cellar: :any_skip_relocation, monterey:       "2fa1b86796d96e2ef8abe0632f472ab4e47b0a9583566a832a827749596d932b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "618f08ec03d197b993dcb8bb2a57cd05b79adb959ad573b1855b6024818fb53c"
+    sha256 cellar: :any_skip_relocation, catalina:       "34bd078c607f3e0eb85eab0af21cb44312b74114738ccbab3dc890ab7bcbfe03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcf4261cea6389403026780fa93f0e3739878ed3bfd4408719016052a9739690"
   end
 
   depends_on "docker" => :test
@@ -26,13 +26,13 @@ class Localstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/28/ce/23133724b50af6332c460f9c5745296b172c121b5ceef4c8c1c67598d1a1/boto3-1.21.37.tar.gz"
-    sha256 "013ba57295f05da141e364191dd46f4086e8fe3eb83a3cd09730eeb684ffbab3"
+    url "https://files.pythonhosted.org/packages/8b/0a/aa1483178a22f683d8f5bf2c53fd3d393077b3848ab06a62dd040bd2f61e/boto3-1.21.45.tar.gz"
+    sha256 "2f2a8d9c44cacac32d258532c6b87d2e0a1549b38e0a559bfb786023f10733b3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/63/81/15d714937a265aea46c1b07a51e60113e683f43ba65ed0f41f79d51ce924/botocore-1.24.37.tar.gz"
-    sha256 "70c48c4ae3c2b9ec0ca025385979d01f4c7dae4d9a61c82758d4cf7caa7082cd"
+    url "https://files.pythonhosted.org/packages/09/55/45ad03606ccafb1f4806c3b07921aa0db388f71f733ec59e699948400192/botocore-1.24.45.tar.gz"
+    sha256 "4bd7c6ca50cffbfb2386c7a43b4205e7a20e85083b0cd2b71fdc8a3d612deca0"
   end
 
   resource "cachetools" do
@@ -96,8 +96,8 @@ class Localstack < Formula
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/c0/00/c6d0c655417b0c392e05dad24ebb4acb044a506c12716e3fca99da886bb9/localstack-ext-0.14.2.tar.gz"
-    sha256 "99a348a9792bd8460c071f7af83733a58ab89dbba138f48499b8dc5f447272bf"
+    url "https://files.pythonhosted.org/packages/25/af/03d754a3f85f5c1ffb3a5046dfef28e778136ed723596ec097e2c2b27073/localstack-ext-0.14.2.5.tar.gz"
+    sha256 "4250cb46ea80205f4f0803b44344744385d5554122e844d84029d29dc3499882"
   end
 
   resource "ordered-set" do

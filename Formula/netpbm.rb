@@ -6,6 +6,7 @@ class Netpbm < Formula
   url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4311"
   version "10.86.32"
   license "GPL-3.0-or-later"
+  revision 1
   version_scheme 1
   head "https://svn.code.sf.net/p/netpbm/code/trunk"
 
@@ -16,12 +17,12 @@ class Netpbm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "631f1cab0394dcfa01aba30eb971fdb0532207eb327f854668dd18568c1e671b"
-    sha256 cellar: :any,                 arm64_big_sur:  "0448d80545090f5e4922c82d8e776b21fe23bcd4e32c4910b664dd7e1bac22db"
-    sha256 cellar: :any,                 monterey:       "ea9046815c5d1803c0bbb53d221f308baf57bf647a87424ff321a6a0f3ceb748"
-    sha256 cellar: :any,                 big_sur:        "cfc749333431aa07b626edac0e73a1f8f2512aed00656044ae3fc4a7b8da7518"
-    sha256 cellar: :any,                 catalina:       "69ced83f7701dd74f5fb944ee66f4e9822a70afece7a27586880db5c19bef960"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3492eefa5aefe8173e943bccd7b85fd4cdf2b7f309c4509c5ce66ed91f17bcc"
+    sha256 arm64_monterey: "50fe4b8bd38c95a636876c50eaa56ba7c08bc40260d2e41af83cd5851ecfdd27"
+    sha256 arm64_big_sur:  "c1afd6d892fd167b850996d6ef6d8c91777827d51e1c336a06ebe724559f238d"
+    sha256 monterey:       "160dbd102087ec169f5019527839bfe9d01454a0267196ab09a8fa8b3d852dd6"
+    sha256 big_sur:        "a08508f82df946861034ba7b5f5d48e30a344e3aa3b4ab3d66c0c3b21706cada"
+    sha256 catalina:       "3c55ba437d3991e17750144f586b83cc36294d615a2c9739b780fce1b0e06c3a"
+    sha256 x86_64_linux:   "f7372e3d244bff638ab0a62dff8df5e17b7ede9602a0a2f7a0e4bc0dc3080154"
   end
 
   depends_on "jasper"
@@ -46,6 +47,7 @@ class Netpbm < Formula
       s.change_make_var! "ZLIB", "-lz"
       s.change_make_var! "JASPERLIB", "-ljasper"
       s.change_make_var! "JASPERHDR_DIR", "#{Formula["jasper"].opt_include}/jasper"
+      s.gsub! "/usr/local/netpbm/rgb.txt", "#{prefix}/misc/rgb.txt"
 
       if OS.mac?
         s.change_make_var! "CFLAGS_SHLIB", "-fno-common"
@@ -79,5 +81,32 @@ class Netpbm < Formula
     (testpath/"test.pam").write fwrite
     system "#{bin}/pamdice", "test.pam", "-outstem", testpath/"testing"
     assert_predicate testpath/"testing_0_0.", :exist?
+    (testpath/"test.xpm").write <<~EOS
+      /* XPM */
+      static char * favicon_xpm[] = {
+      "16 16 4 1",
+      " 	c white",
+      ".	c blue",
+      "X	c black",
+      "o	c red",
+      "                ",
+      "                ",
+      "                ",
+      "                ",
+      "  ....    ....  ",
+      " .    .  .    . ",
+      ".  ..  ..  ..  .",
+      "  .  . .. .  .  ",
+      " .   XXXXXX   . ",
+      " .   XXXXXX   . ",
+      "oooooooooooooooo",
+      "oooooooooooooooo",
+      "oooooooooooooooo",
+      "oooooooooooooooo",
+      "XXXXXXXXXXXXXXXX",
+      "XXXXXXXXXXXXXXXX"};
+    EOS
+    ppmout = shell_output("#{bin}/xpmtoppm test.xpm")
+    refute_predicate ppmout, :empty?
   end
 end

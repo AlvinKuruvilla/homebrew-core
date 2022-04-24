@@ -4,8 +4,8 @@ class AwscliAT1 < Formula
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
   # awscli should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/cc/1b/e5b30dcfc94d3c6216713f4780b186d019476f50ddf9128f3d6180773cd8/awscli-1.22.90.tar.gz"
-  sha256 "a46c9a7fb7b1e10871027f8e156d82db291463e287710868e0481fd84957c44f"
+  url "https://files.pythonhosted.org/packages/33/97/53fc86d7be8cc7caef5ca9233c420e0fcdfe5b4ea528b402863ebce5caba/awscli-1.22.100.tar.gz"
+  sha256 "829ad2636e271b0d3385e763b6586dcf5e95339becc4a134d04a6c4add2ce616"
   license "Apache-2.0"
 
   livecheck do
@@ -14,12 +14,12 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "579d57c1c5882d71612489faaf88084bc5ec0df1ea4f149c4e06a0f123fffc7d"
-    sha256 cellar: :any,                 arm64_big_sur:  "4959a891fc449bc9758c7c4c426cd26b69b2e0573f8fdbeb1fd3f457635fe9b2"
-    sha256 cellar: :any,                 monterey:       "8db81e13559a2c9a5e9ee33f12a716b104012371fe06412f0eff5dd2782a34f7"
-    sha256 cellar: :any,                 big_sur:        "9b9c4502dd1599903e56dbabda9c8bdc51697aaa9ec9a1c6b5219e4b0597b038"
-    sha256 cellar: :any,                 catalina:       "c849a0d9c502ac9e13974b2f545bd5deebbad04ecd440de4b99f73b1937ba476"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce7285672b09e5cb2a8bdcc4638c1161e3da9f144f7d9e376cc407316ae78c1b"
+    sha256 cellar: :any,                 arm64_monterey: "1f7ceee3b6125c4ddfdd4da630f5b06196ecbf2aa161f4fc8681362adf554973"
+    sha256 cellar: :any,                 arm64_big_sur:  "18a613483f6599bc4e2ec8cc3c14db387df515f1651692397054b6168806f3ea"
+    sha256 cellar: :any,                 monterey:       "a31e4e0b71d9f86b6e2324e02bb53321d9b329bb063ce2f05f8e6647da678609"
+    sha256 cellar: :any,                 big_sur:        "2a955c3991deb1a3059722ca7af59bba5cb90514c6d1ed7836336dc69b5d01cc"
+    sha256 cellar: :any,                 catalina:       "7604f040ae498bd99dd572fa3f6b8455962ff4f5cd371dc7a2216a2d62c900a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "623b992ddc0c1b8dcfad4e1b5a2a70c4afd8642d8cbbd76a93212b81edc483c1"
   end
 
   keg_only :versioned_formula
@@ -32,8 +32,8 @@ class AwscliAT1 < Formula
   uses_from_macos "groff"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fd/0c/7be713341c583986a4f49cab0dfef8e263b636ba9a30c30179c3ad136343/botocore-1.24.35.tar.gz"
-    sha256 "36b5422d8f0c312983582b8b4b056c98e1fd6121cb0b2ddb1f67e882e1ae6867"
+    url "https://files.pythonhosted.org/packages/09/55/45ad03606ccafb1f4806c3b07921aa0db388f71f733ec59e699948400192/botocore-1.24.45.tar.gz"
+    sha256 "4bd7c6ca50cffbfb2386c7a43b4205e7a20e85083b0cd2b71fdc8a3d612deca0"
   end
 
   resource "colorama" do

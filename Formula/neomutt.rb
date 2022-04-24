@@ -1,18 +1,18 @@
 class Neomutt < Formula
   desc "E-mail reader with support for Notmuch, NNTP and much more"
   homepage "https://neomutt.org/"
-  url "https://github.com/neomutt/neomutt/archive/20211029.tar.gz"
-  sha256 "08245cfa7aec80b895771fd1adcbb7b86e9c0434dfa64574e3c8c4d692aaa078"
+  url "https://github.com/neomutt/neomutt/archive/20220415.tar.gz"
+  sha256 "84982cb4c2fed63e90d71fab45faa90738bfc58050430606135cbd8924d94682"
   license "GPL-2.0-or-later"
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
-    sha256 arm64_monterey: "ef1a1532b4fa3ce8241c71d3a543fa193a5c310c5117fa687bc695c3a7cf4bc8"
-    sha256 arm64_big_sur:  "4c237578e16c4e2206e9bf8fc60ec5748efa12a3709a0676b6b2438ade7da3f5"
-    sha256 monterey:       "5be05fc64b6f5b510873a35c7584955a24edab88622295d54f1c09fdf95f617c"
-    sha256 big_sur:        "42d34fcc9c1b3d97623ae96833415c2c79b87453cd3c19d00e39b919a6c6241b"
-    sha256 catalina:       "fdd0baffcb5c94b761a9ed454f1d96a8f6719eab3842f4a3239019e1085cb9f7"
-    sha256 x86_64_linux:   "edfcc9cb08d618770605f3a0b9d6c97304277078b049675adc1629c2b1b333cd"
+    sha256 arm64_monterey: "ca5c8221b3701ff99cb8f382bfb46eb14a935e6bd1d5da89a9add25f9b612b66"
+    sha256 arm64_big_sur:  "e5908c743fe353d2895b5ff08a2d7a73b36866ab8d581aab590ec018dfa560e3"
+    sha256 monterey:       "cbd8b897bcc0d90f81d3d751cf2457cca095ca3de9b495ba05c2d69b62ee88e0"
+    sha256 big_sur:        "37dea01682e93e6df780f1cbf71988a8280e062f9daaa56c61e38bb188107a5d"
+    sha256 catalina:       "f4e344cf43f5d561f8c8d2d0f2a95470369b68a26bec68dda191bc34d02838cf"
+    sha256 x86_64_linux:   "e6e3b82efcb82e7e60748a064954665b712fc2c73503ff39f7d13f36d0fd5c59"
   end
 
   depends_on "docbook-xsl" => :build
@@ -21,6 +21,7 @@ class Neomutt < Formula
   depends_on "libidn2"
   depends_on "lmdb"
   depends_on "lua"
+  depends_on "ncurses"
   depends_on "notmuch"
   depends_on "openssl@1.1"
   depends_on "tokyo-cabinet"
@@ -28,7 +29,6 @@ class Neomutt < Formula
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
-  uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   on_linux do
