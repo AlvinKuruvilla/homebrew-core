@@ -1,17 +1,17 @@
 class Brook < Formula
   desc "Cross-platform strong encryption and not detectable proxy. Zero-Configuration"
   homepage "https://txthinking.github.io/brook/"
-  url "https://github.com/txthinking/brook/archive/refs/tags/v20220406.tar.gz"
-  sha256 "cf4433263cc755edfe56be66d206b7ee5083faaaa8b30bb4102174ad73e22764"
+  url "https://github.com/txthinking/brook/archive/refs/tags/v20220501.tar.gz"
+  sha256 "31474d3a9667a153986710b989d99a4f971255f407d47eebaf15b6fc9c2f4128"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b728de08e1e2c41973f0843f8edf93430ed46216efc0b104d3e0b6e17494f0e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a0c89d617aca9d5a5d0225987e41719b6f032f34000faf97db6bdb2c3af8c9b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "b288135572cb5fb1199ee968189a89ef0d74448be56e4d80e712b5b930581e39"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bbc0b1aab03d7b036413eb4a6be8084fb319d8b6c5d81c8355d111f699f251ab"
-    sha256 cellar: :any_skip_relocation, catalina:       "8da09299cc60fba16d366c38d51aca7bd5701185f8af73e76ef29ac9ba78b59e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23296bb783de2c22dcf68b6da9169a9efe2787bb2b4078c749e5d41101758b09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "250ef1e71e1ad92daf620eb3db2db76b20488612eb1fcf20924848ca0d29e80d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68f7a3ca9c1bb5410572325e5fcfe63b4512eba1436f6c5dad280d3887073cf5"
+    sha256 cellar: :any_skip_relocation, monterey:       "406f6a75ef631958da89f59c8def5359792210fb7dce1f18a64d16ffd6fe8eda"
+    sha256 cellar: :any_skip_relocation, big_sur:        "81a0773a91102467aabd4f3d4546150f98481a22e333aea44d91f49b7347ce30"
+    sha256 cellar: :any_skip_relocation, catalina:       "83048afb43d2820605ce1202c817078cedc51ecb4769b95d9822e5d29421138f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1e0ee782d1a17445855b2d432cdb4e844c1fb7a4fc3a92d5e2fa3d908659c95"
   end
 
   depends_on "go" => :build
@@ -22,6 +22,14 @@ class Brook < Formula
 
   test do
     output = shell_output "#{bin}/brook link --server 1.2.3.4:56789 --password hello"
-    assert_match "brook://server?address=&insecure=&name=&password=hello", output
+    # We expect something like "brook://server?password=hello&server=1.2.3.4%3A56789&username="
+    uri = URI(output)
+    assert_equal "brook", uri.scheme
+    assert_equal "server", uri.host
+
+    query = URI.decode_www_form(uri.query).to_h
+    assert_equal "1.2.3.4:56789", query["server"]
+    assert_equal "hello", query["password"]
+    assert_equal "", query["username"]
   end
 end

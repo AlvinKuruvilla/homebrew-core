@@ -5,8 +5,8 @@ class Sysdig < Formula
   revision 1
 
   stable do
-    url "https://github.com/draios/sysdig/archive/0.29.1.tar.gz"
-    sha256 "3721c97f0da43c1a68d2962d30363525d8532ab5f2534dfefc86d175e17e423e"
+    url "https://github.com/draios/sysdig/archive/0.29.3.tar.gz"
+    sha256 "6b96797859002ab69a2bed4fdba1c7fe8064ecf8661621ae7d8fbf8599ffa636"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
@@ -22,12 +22,12 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_monterey: "c61030d0bd4315be991e40073d3f49f0de63e476122a63edc0262bc815c54a3f"
-    sha256                               arm64_big_sur:  "0fc143093fc8f3cbc59484bfb2288e6bc4c431fed728a1bca6ed0152c1fd0871"
-    sha256                               monterey:       "382f4e44b20ad36c7e9c1bd9e6bb302538261a68ab07136278220edf6d0a3657"
-    sha256                               big_sur:        "cebc4238cc77d014017a4679d1fae7b3d74ca02357f13a9f446b804695bed83b"
-    sha256                               catalina:       "ab214dd91e71d98a20e33413c06f5de59a411b0f293d8e4b467c874124335e17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "287ac0a73db3e70b32f164c8ef7ba998bfdf207aefdeb3ae806788048e824145"
+    sha256                               arm64_monterey: "979ffa88d44db34a6d5f35970fdf27e567d537e0afd0730467fa8ec0533153a1"
+    sha256                               arm64_big_sur:  "51277a8142a80004f80797c4911f4c313eac17204bd22c503aafc96e31423160"
+    sha256                               monterey:       "4d001e9d629eaf852fad855038e91ca0bd442eeeaf457ba67be3f18f18d6d755"
+    sha256                               big_sur:        "002e52b9c0a7f3dc3a4d9c5be978e3433b3cda168eb2b2f598c32e66ef04e221"
+    sha256                               catalina:       "2b980e510f7f51ea1769a41de2054092b9152bbdf4b5de9f907aada40497cb34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cbf4e1cd7f00742bf62c400c749dd056c6559b41c5cf0990504064aa46bd869"
   end
 
   head do
@@ -39,6 +39,7 @@ class Sysdig < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "c-ares"
   depends_on "jsoncpp"
   depends_on "luajit-openresty"

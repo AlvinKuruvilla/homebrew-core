@@ -3,18 +3,18 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https://xon.sh/"
-  url "https://files.pythonhosted.org/packages/8b/29/7079a56c46901ddeb8f4edd5d313877182be548d04808c02bf582be22211/xonsh-0.12.1.tar.gz"
-  sha256 "e9aacd7272ac7c76d69d5318275b718e8e19b1a6b7ebc3cf5896baf5d2a5f7c1"
+  url "https://files.pythonhosted.org/packages/21/a3/6b13fe53a102edbcde11a8519cc8963afc2156ec1fdefdbc4b0f3a389a7b/xonsh-0.12.4.tar.gz"
+  sha256 "a3d394db471097762ecbdedcd35686efd1aac3b5885f614501403f6d09628a76"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f38f8e0752b2f9f00a7a7c50242c2d7b41bdea5e4161fca59535387eaa3521fa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d73dc14a1e41bcd37345bf32c714ca46e4f4c36847013dced4fdbcb2a412238"
-    sha256 cellar: :any_skip_relocation, monterey:       "b01ca9dea5a23c147df3d2384a7494c6cf007f386ae988ca64bcf3fb9310bbd1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4687d75210cf226dae400a886990abee18daab7828aa9303d1adfcfef539fec6"
-    sha256 cellar: :any_skip_relocation, catalina:       "b840358180ff2b80c51c12dde186cb3971a371162d63703b5b015d54d72b2d6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4df6f66267d02c44b94e5eef3f18c852e92b6102a64fb26eb3fc439bf2a27b5a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e07d7a467bff2031d4ec5ddd6a68ae90c9c6d072de9f2abfe42e7409208074e4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a85cf7db28cece4eadabd84356cea621842964bdb50ab42ee3b7a1880d0e691e"
+    sha256 cellar: :any_skip_relocation, monterey:       "38d255d5d9e5eb7484eefc85478a120a29cf23333511ad91b779775ef6d0f429"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1a46d330f22ef52df665c42be640639a6ce42bc9fceef000f53f0883a27970cd"
+    sha256 cellar: :any_skip_relocation, catalina:       "1ffee830f94271e6e108e3a8decfe1d7fe74a89689312012b00f9ea5b0086926"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b221a4566706b8d2a10d7fb27681cfb4ff08e702a3e89a025a6d0837245e48c"
   end
 
   depends_on "python@3.10"
@@ -28,8 +28,8 @@ class Xonsh < Formula
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/94/9c/cb656d06950268155f46d4f6ce25d7ffc51a0da47eadf1b164bbf23b718b/Pygments-2.11.2.tar.gz"
-    sha256 "4e426f72023d88d03b2fa258de560726ce890ff3b630f88c21cbb8b2503b8c6a"
+    url "https://files.pythonhosted.org/packages/59/0f/eb10576eb73b5857bc22610cdfc59e424ced4004fe7132c8f2af2cc168d3/Pygments-2.12.0.tar.gz"
+    sha256 "5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"
   end
 
   resource "pyperclip" do

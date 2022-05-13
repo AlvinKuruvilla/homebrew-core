@@ -6,12 +6,13 @@ class Lsyncd < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "3a78bb8674296e77a9e186f9e11f4d88b1bbf78ad83689855254d4884456a421"
-    sha256 cellar: :any,                 arm64_big_sur:  "05b9a07bcac8df4416b10a81223623fcfada7e73c7398639381631ce2bdcfd12"
-    sha256 cellar: :any,                 monterey:       "fbf835efa75b8a087fc022034fe9c54c841f1f0c43c70ec5176d0373d39f042c"
-    sha256 cellar: :any,                 big_sur:        "8792501d81fe3c1ece7b0df75c37b106587f2bc32e8cf4c9c31a45cf916aef31"
-    sha256 cellar: :any,                 catalina:       "a567eb529289b0b04d73700fe78f376e601866f00b7f1b19628e2667e74c9db4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73f0ffe184f0788b239fe9780d9d4ee998df95f5db05dc078a4c15170c5685e7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_monterey: "cbda318c2cf13e893bcc621563af095d2436040b3dbbeaf6b2ca47d4e80c336a"
+    sha256 cellar: :any,                 arm64_big_sur:  "4e4414dab4d0e2ff7e7482554e6435121434009fd0d66796f7401fe76a90c7bc"
+    sha256 cellar: :any,                 monterey:       "2bf0b3eb23b5b88d0efdfab4dea33ae92063748f0135fabf4fa8c7531b8a9861"
+    sha256 cellar: :any,                 big_sur:        "7e7495710b3dc7d92ed0d794b030c8545d043fa64d9f5abd82e56fd1b102248d"
+    sha256 cellar: :any,                 catalina:       "f93035a8b1d52b3fbfca4aee82cefcf07ff90e2d9a7d2bff70c145fb1c031c61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9491c6fd122ef3ad43ac82553bba87b4e4a5c863b2166069ceaafef7ca4d624"
   end
 
   depends_on "cmake" => :build
@@ -72,6 +73,7 @@ class Lsyncd < Formula
       "12.0"    => ["xnu-8019.41.5.tar.gz",       "54540440f73d5dcfe94ed33591f2fa40609f932213a5e6862268589d32ff7ac4"],
       "12.1"    => ["xnu-8019.61.5.tar.gz",       "1e035fcf9a2b86dfadcccbbaf963f98b878772ae29c5058f1dc0e5852f70650e"],
       "12.2"    => ["xnu-8019.80.24.tar.gz",      "2fbfe90ec8c93d93f0dd69f09610011d26a722f98266202de6a7c2af764712b4"],
+      "12.3"    => ["xnu-8020.101.4.tar.gz",      "df715e7b2bd5db0ba212b5b0613fbbc85c3cbc4e61f6ee355a8b6cf9a87d3374"],
     }
 
     macos_version = if MacOS.version >= :big_sur

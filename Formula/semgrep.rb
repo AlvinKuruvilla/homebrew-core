@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v0.89.0",
-      revision: "9790059a0a6f22a2f2e4db7699b0a2d67a7dd037"
+      tag:      "v0.92.0",
+      revision: "e8fc11903ab0560a9dd3de2687f0bafe8f03c6d8"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "1d9e0898d71fc812f1f03e74761f9e0ebfe0ec57b914b626a7493167c733c67d"
-    sha256 cellar: :any, arm64_big_sur:  "a53b6e467c7ff3477ce7e5ccdbdc84d2f5cb40daf11185a91348b65ac09db6d4"
-    sha256 cellar: :any, monterey:       "a64c9fb99d0010e1fd8488b08c27802f82b71ff990cf9308f032162d0d7f5693"
-    sha256 cellar: :any, big_sur:        "d04d60cd0a95556145e8ab605a235faa0c8f95400dfbb9a390c55f334f908394"
-    sha256 cellar: :any, catalina:       "afd81ffcb61c0c2be40355c8bf4f0e3d6a261d813f99ba3a5ad681846085bec2"
-    sha256               x86_64_linux:   "8cc8a7dd49ae380cc36d6a7e2db47680201b65ae2c7a3bf03c12bc246b453486"
+    sha256 cellar: :any, arm64_monterey: "c832beb37fc9b9d1187f97dc1bfcd0b41ee3a681b911235f2d878d2ab382d9d8"
+    sha256 cellar: :any, arm64_big_sur:  "3609b2aca5a8eecc6ccf35ee82f51387d4c0fd193130194f4a0916db2801cdca"
+    sha256 cellar: :any, monterey:       "85cc94623194e752c8243ef35ce2c0f2a985cdc96716beeb5ce87c161b55a6d0"
+    sha256 cellar: :any, big_sur:        "44367e5d7a107b4be795957fa47daddf4ff2566829005d34a695da3746af57f0"
+    sha256 cellar: :any, catalina:       "b559e18fe6bb8295e9a6bf670a57f91a594d313ad86c98c372ae547abb184da3"
+    sha256               x86_64_linux:   "4b45606d9ccab795ae1574d13dc0d9a92b435f1856643a3bd55a09fb3d7856e4"
   end
 
   depends_on "cmake" => :build
@@ -68,8 +68,8 @@ class Semgrep < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/42/e1/4cb2d3a2416bcd871ac93f12b5616f7755a6800bccae05e5a99d3673eb69/click-8.1.2.tar.gz"
-    sha256 "479707fe14d9ec9a0757618b7a100a0ae4c4e236fac5b7f80ca68028141a1a72"
+    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
+    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
   resource "click-option-group" do
@@ -118,8 +118,8 @@ class Semgrep < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/31/df/789bd0556e65cf931a5b87b603fcf02f79ff04d5379f3063588faaf9c1e4/pyparsing-3.0.8.tar.gz"
-    sha256 "7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954"
+    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
+    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "pyrsistent" do

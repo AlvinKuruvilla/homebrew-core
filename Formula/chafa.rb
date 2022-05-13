@@ -1,8 +1,8 @@
 class Chafa < Formula
   desc "Versatile and fast Unicode/ASCII/ANSI graphics renderer"
   homepage "https://hpjansson.org/chafa/"
-  url "https://hpjansson.org/chafa/releases/chafa-1.10.1.tar.xz"
-  sha256 "5791b726a02a449d7c4d6306ed97b711d7df22c51c891d8c64a60015b8e448ec"
+  url "https://hpjansson.org/chafa/releases/chafa-1.10.3.tar.xz"
+  sha256 "797729e0ae9af1ff084d59b89054e9f59fb419a9f13b846a36d3bead50aabe3c"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Chafa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "001cfbdd291c9d24f066ac7994bbe65cc3ad56c2ca3201c0b36a98eaf091d8ef"
-    sha256 cellar: :any,                 arm64_big_sur:  "abccbc69d009205118dd7c7dedbd0cd8cfefaf315ab79b2b1ae2ff714cb79ee3"
-    sha256 cellar: :any,                 monterey:       "ad572bb07bae23e05f35bda8692eccaff559d42a244d53c0ced8784d044881ab"
-    sha256 cellar: :any,                 big_sur:        "308a7c8621f1b2ee94004861b980e59d22444266f297061a2fb7dc691c50fc2a"
-    sha256 cellar: :any,                 catalina:       "a0a68df960c9d5a9b78e65b3217298c3c0faca0f42c173c17c1535b35629b880"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05831d8b3fcef5792bb92162538e664e205afe5ab189f2e5179f8f66ad0d8780"
+    sha256 cellar: :any,                 arm64_monterey: "deadb7d044c91f82f2becd3f703cdee32892b5dd808559aecf7c44087e01ff4a"
+    sha256 cellar: :any,                 arm64_big_sur:  "1fa2cd6c1e0909a1b06ad52b394d42305a611a13b2f97336d916917e4a9f2395"
+    sha256 cellar: :any,                 monterey:       "b9d82222f2d7ec948e5af12c2470352846b3bdd18737f83e260a15bff0745265"
+    sha256 cellar: :any,                 big_sur:        "6739c7f365e403105694fb7bd539348fca8bf1c01cb85700ebb93e8ce46bd904"
+    sha256 cellar: :any,                 catalina:       "16153e929a68f9da52fe709793031432b33344717fa3217a93dc2e3887595436"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "682396e890521341156d6590ae0354d1e5f8f8337dec00bd4d5523d67fbd91da"
   end
 
   depends_on "pkg-config" => :build

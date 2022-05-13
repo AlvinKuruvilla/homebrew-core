@@ -4,15 +4,15 @@ class Pdftoipe < Formula
   url "https://github.com/otfried/ipe-tools/archive/v7.2.24.1.tar.gz"
   sha256 "561b18fc2a7ae45c37c5d0390443b37f4585549f09cd7765d856456be24e5dbc"
   license "GPL-2.0-or-later"
-  revision 4
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "3ab6a38078e56d64e493b40ffca5eed6cd1bae0286ee487c5b4b429e9d44f850"
-    sha256 cellar: :any,                 arm64_big_sur:  "60ef16eb2b4a7d2c128b045d753a72c62de79dee856629479f76ed0b20f96c1b"
-    sha256 cellar: :any,                 monterey:       "0786e636f7046f93bdb3a04948ce1e18addc65e330b0ff966ebbec5b4fbf084e"
-    sha256 cellar: :any,                 big_sur:        "6756d901b8e14244157ac0c4f139ef530c9f5159cf31603ad3ab639d65e62fc3"
-    sha256 cellar: :any,                 catalina:       "08b6e6e6bfd3479c3941d016916d3eb649cf007c16a34f81e3562f540a9085a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e69d1de07d33576a3beae635f8d69dfeb3cf390e8d064ebf15126aa6f4a49402"
+    sha256 cellar: :any,                 arm64_monterey: "71993ec5e573e4f8e3ff452dc7d0c3df9e2f08a542940f19578bb90649104830"
+    sha256 cellar: :any,                 arm64_big_sur:  "3c1e7a01a95419a7a85ddae59eca79c4f8add94e235f9b5274cfbbd86e8e27c0"
+    sha256 cellar: :any,                 monterey:       "1e468ddfe642edc7241437e2bae279813452d3502849bde0547e65a6efb44264"
+    sha256 cellar: :any,                 big_sur:        "9c4b5c435105469b2faf694db8343291624127adafc4d5e724431f63da17c6a6"
+    sha256 cellar: :any,                 catalina:       "6adbd859a82a139179843984e808ac2cdcc428f5204c67e01a2097a581e7de6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "964eab28db09c3895efba2d1f7200e4551eb29368997f9523fd68abdfc20798a"
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +23,12 @@ class Pdftoipe < Formula
   end
 
   fails_with gcc: "5"
+
+  # https://github.com/otfried/ipe-tools/pull/48
+  patch do
+    url "https://github.com/otfried/ipe-tools/commit/14335180432152ad094300d0afd00d8e390469b2.patch?full_index=1"
+    sha256 "544d891bfab2c297f659895761cb296d6ed2b4aa76a888e9ca2c215d497a48e5"
+  end
 
   def install
     cd "pdftoipe" do

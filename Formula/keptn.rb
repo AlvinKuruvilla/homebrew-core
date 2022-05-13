@@ -1,8 +1,8 @@
 class Keptn < Formula
   desc "Is the CLI for keptn.sh a message-driven control-plane for application delivery"
   homepage "https://keptn.sh"
-  url "https://github.com/keptn/keptn/archive/0.14.1.tar.gz"
-  sha256 "8ecf1613cfc7e17afe33056512f8cfe4cf02f5c881b2093bf935454167f40f96"
+  url "https://github.com/keptn/keptn/archive/0.15.0.tar.gz"
+  sha256 "a4b156d44a9b81efdcb75c527cd44e21745474e60ea2766b43f2744fb4bae264"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Keptn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "caf3424e34a54ca803bc6725e00873093f968d73ba02836e4c59e21df0013d1b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5d487c013d4386f207741d29791706e5e9d5fc239a32d4f55303587390db029"
-    sha256 cellar: :any_skip_relocation, monterey:       "b69cde067d223456ce98b5ac1a7b3a87586d397f88b1e361ac01a31ae755cfc6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c8b866dd5081f71a0b8f5ce719abc6eff744e8f58bed2ce5dbde678ab9fa1786"
-    sha256 cellar: :any_skip_relocation, catalina:       "6958e4fc99a8ad5262135fe66f1f16f96ece20bb7071bcca912e2f19002ddb50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1304376d4da07b99784ae18188e46892fbcaf9dbf67ab8189f9ddfd957f329dd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b8f6c505d4cadaea9afdeefad384453ee09a945077939f596dff42ef0d2ddb1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9fe1a058fb784936cb6cb8767eb3189d4a5ed8aa4ff7868bf3e94ec06e100b5e"
+    sha256 cellar: :any_skip_relocation, monterey:       "232a834f43083eb27334c5e8510429116479082688a4a960a81d4e78bab8c0ce"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f2312880cd64e048cd413402882872049e9eb149fc726a761e6c52a72580b129"
+    sha256 cellar: :any_skip_relocation, catalina:       "317c8326c163dbb225fd214f79e25d333f8d91a135b04f1c380555e3bc821206"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a3dbe8266754a6b44bf27a5fe4129345d6b18de12283e53fededbd79a29c523"
   end
 
   depends_on "go" => :build

@@ -3,17 +3,17 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-24.1.0.tgz"
-  sha256 "ecde01471a5056197aa1575deebd0e831648e99a85faab7feddeb2e86980e9a2"
+  url "https://registry.npmjs.org/vercel/-/vercel-24.2.2.tgz"
+  sha256 "0953a37414f95972a6b8f530df1441c4b6548a99384389fa54948ccd21d7bd05"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99101da120f24a72e0e8eacf8653ee7cfca8c515181fd574c44fb1a8e6a633cd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "99101da120f24a72e0e8eacf8653ee7cfca8c515181fd574c44fb1a8e6a633cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e181a6ae3b586afb3172ff46a65cc7adab5df81029c24c58a4c48377da2469b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2e181a6ae3b586afb3172ff46a65cc7adab5df81029c24c58a4c48377da2469b"
-    sha256 cellar: :any_skip_relocation, catalina:       "2e181a6ae3b586afb3172ff46a65cc7adab5df81029c24c58a4c48377da2469b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5b2c4809cb9a632c414cca18fb1f10e22cbcb17f9efe13ae06683c4f957d284"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f08a5217a7da49607155289e95e963939ca1c4193c641c72e824d862ec0b00bd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f08a5217a7da49607155289e95e963939ca1c4193c641c72e824d862ec0b00bd"
+    sha256 cellar: :any_skip_relocation, monterey:       "054802d625019ddefc127ecc5305b3c3469eff40d71faae1da2b9d0848bc8944"
+    sha256 cellar: :any_skip_relocation, big_sur:        "054802d625019ddefc127ecc5305b3c3469eff40d71faae1da2b9d0848bc8944"
+    sha256 cellar: :any_skip_relocation, catalina:       "054802d625019ddefc127ecc5305b3c3469eff40d71faae1da2b9d0848bc8944"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0462e15d63951a075cd8a0cdb7f55d340058b90cf026bb1af7de735c373b164a"
   end
 
   depends_on "node"

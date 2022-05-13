@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.23.6",
-      revision: "ad3338546da947756e8a88aa6822e9c11e7eac22"
+      tag:      "v1.24.0",
+      revision: "4ce5a8954017644c5420bae81d72b09b735c21f0"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -13,12 +13,12 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8353365db3dd82faca254a7f826b4cdf9cafefc467f6bc51f0146ef2bc121739"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab0005bcbf276c50a0f517d87c59d08f6da3c6595d280f2aa1006e42032400d4"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6edcaf8b6f95488e4153bd58fc9241dcb9fd3fc8f630177e31d9484ec3e49f8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e3f82ca60285a4e4810cb8c0691b942ff416c1c41b308ea2366eeec79e30437b"
-    sha256 cellar: :any_skip_relocation, catalina:       "bce8312f06de902f5b0eba97e8e7ce9fa67acce613c753b3c43d614f9aaaac7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7210c9e12568d927510540a7e162786caa25985f764fbd29271ed7a122ba0587"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e57f8f7ea19d22748d1bcae5cd02b91e71816147712e6dcdcc4f171da3ae7d61"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9a5c487f78c68daec18129eb96902e8c18cf8e5c46ec6f333b36d4aa193775c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6c9b1764f5a8f2a9200d0d2aaeea8f5cf2853dbbb91dc64cf601691e0830e40"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d561b63e734115f7f17d411dfe5e890dedea58fb1e7d634e7ffe14b2d8b23305"
+    sha256 cellar: :any_skip_relocation, catalina:       "33b2eaf5e33c3551407bbf606c70ce0aa4bd0b8741919bac0feb1c64e6e423a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dda7bca22f95abb3e0d75d3cbe7739604813bfeb48a3d7c03344b8bbe346e4de"
   end
 
   depends_on "bash" => :build

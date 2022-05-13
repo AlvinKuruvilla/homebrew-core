@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/b9/dc/04f831bc15ccd42725bc5e547f2bccc7b27e5b6d1ca5fc5e98f88f744fdf/snakemake-7.4.0.tar.gz"
-  sha256 "4f201aa81ff1eebe3eb1cb883d3b6c33654e76c848f107ca05c63d8d72b53ecb"
+  url "https://files.pythonhosted.org/packages/e1/a7/24b138fc7501507804ea4e4379de3b1cb15b4075b6f8f20ba4d8f15ba4f2/snakemake-7.6.2.tar.gz"
+  sha256 "80cb2d0ab0a2366010a1c0b288a90159cd640f942ae86e740021c15c9989f872"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "54db5915f5d643bae8516f6eb8c9cd0f517ea03587c54bb19bc8548f0281bc30"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "507adcd6746c1658547e516c8400978bdeda4828d928d1324a60df72b99c07c4"
-    sha256 cellar: :any_skip_relocation, monterey:       "ebb6cb966c5db469c28b03c138286939e4adb0d6bae6fc2fbc6f7a69a2b36101"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d77b20ce2a47c20fe011c8ac2065ec9192656cb134d10664bc74ee29e36bbaa6"
-    sha256 cellar: :any_skip_relocation, catalina:       "fc54c0fb1b62ea4a84bc869832dbc602b90a926a4995a6392cd5366a7ceb8c14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41349004d67ece2749e583db1c77d0e04ef5216416dbb28a39fe958e0262122e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "60778b70e8ca1ee5c56a4452e9c54282645e4f7896a7b75255fa46942314e5fe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60ce5cf2c8c9805741956bfea448fc4b91731c9b37a9b6edd7c7f2831ad29b46"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c846fb1266524e028164af53d21927a69418c547eb1aed97ed9ccbbeadb9f2b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "758ea62ed831e45cc9ec22e2b420964d8168283e54d92abb4af069360ba4fda0"
+    sha256 cellar: :any_skip_relocation, catalina:       "7a50217d5c393d9cfa3b8b23b3e9a4733094ee35db8f70b17389060d79b9dc53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b0502a501f192928583c5b6dd8fc2901c4a708cc28027bdb35487b8e16d8211"
   end
 
   depends_on "cbc"
@@ -86,13 +86,13 @@ class Snakemake < Formula
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/89/e3/b36266381ae7a1310a653bb85f4f3658c462a69634fa9b2fef76252a50ed/Jinja2-3.1.1.tar.gz"
-    sha256 "640bed4bb501cbd17194b3cace1dc2126f5b619cf068a726b98192a0fde74ae9"
+    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
+    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/26/67/36cfd516f7b3560bbf7183d7a0f82bb9514d2a5f4e1d682a8a1d55d8031d/jsonschema-4.4.0.tar.gz"
-    sha256 "636694eb41b3535ed608fe04129f26542b59ed99808b4f688aa32dcf55317a83"
+    url "https://files.pythonhosted.org/packages/9e/62/93a54db0e44c4de57868a7d638d7a8abce113c8bc43a20b10b1109b2a517/jsonschema-4.5.1.tar.gz"
+    sha256 "7c6d882619340c3347a1bf7315e147e6d3dae439033ae6383d6acb908c101dfc"
   end
 
   resource "jupyter-core" do
@@ -106,8 +106,8 @@ class Snakemake < Formula
   end
 
   resource "nbformat" do
-    url "https://files.pythonhosted.org/packages/eb/51/ad97f33007b51095f551fc06391f13d28a45f62c0c051837331970e01557/nbformat-5.3.0.tar.gz"
-    sha256 "fcc5ab8cb74e20b19570b5be809e2dba9b82836fd2761a89066ad43394ba29f5"
+    url "https://files.pythonhosted.org/packages/2c/ed/ce3e63f5e757442cbb01ac45683fb0338d48f7e824606957d933bc831a58/nbformat-5.4.0.tar.gz"
+    sha256 "44ba5ca6acb80c5d5a500f1e5b83ede8cbe364d5a495c4c8cf60aaf1ba656501"
   end
 
   resource "plac" do
@@ -156,8 +156,8 @@ class Snakemake < Formula
   end
 
   resource "smart-open" do
-    url "https://files.pythonhosted.org/packages/53/9e/7a25cefbe4b51ea9bf883999c359dd761d32dcd2f764b70805278bb20bde/smart_open-5.2.1.tar.gz"
-    sha256 "75abf758717a92a8f53aa96953f0c245c8cedf8e1e4184903db3659b419d4c17"
+    url "https://files.pythonhosted.org/packages/e5/fd/8f944b4520298f3256d77adaa5994ca969985062e3c83d7f9e6217abc910/smart_open-6.0.0.tar.gz"
+    sha256 "d60106b96f0bcaedf5f1cd46ff5524a1c3d02d5653425618bb0fa66e158d22b0"
   end
 
   resource "smmap" do
@@ -191,13 +191,13 @@ class Snakemake < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/c7/b4/3a937c7f8ee4751b38274c8542e02f42ebf3e080f1344c4a2aff6416630e/wrapt-1.14.0.tar.gz"
-    sha256 "8323a43bd9c91f62bb7d4be74cc9ff10090e7ef820e27bfe8815c57e68261311"
+    url "https://files.pythonhosted.org/packages/11/eb/e06e77394d6cf09977d92bff310cb0392930c08a338f99af6066a5a98f92/wrapt-1.14.1.tar.gz"
+    sha256 "380a85cf89e0e69b7cfbe2ea9f765f004ff419f34194018a6827ac0e3edfed4d"
   end
 
   resource "yte" do
-    url "https://files.pythonhosted.org/packages/30/7e/86e07223e6a1d0682acfe9c2db0e711fdaa70b6e7f8ea3e8992465a71105/yte-1.2.2.tar.gz"
-    sha256 "bfef905fe4bde475fa00eaa6264e1bd2c3dac9494abe32aaf387db08882c9096"
+    url "https://files.pythonhosted.org/packages/57/20/ebe70dcf175d94f22089966631ab9149b88c42e55e4a64f6393a5d6517f6/yte-1.2.3.tar.gz"
+    sha256 "80f7786968ebf2fa8af3631a1c88575a4da01de1e0e927d252fabebfd4f6666e"
   end
 
   def install

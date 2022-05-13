@@ -3,17 +3,17 @@ require "language/node"
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https://hasura.io"
-  url "https://github.com/hasura/graphql-engine/archive/v2.5.1.tar.gz"
-  sha256 "1611da0f2632545c780ff5b7b61007ed7ba6cab352388214cac08b6df21bb9b5"
+  url "https://github.com/hasura/graphql-engine/archive/v2.6.2.tar.gz"
+  sha256 "842ee73adb37e7a30c5a4be74fe1ea4e64c09013c3a2c23bee59f1648d1da3d6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7275165f2aaa649a51036f05e40ee0ca1ef0ae4b9de590a41bb30efd9edd3c24"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7bc02a542abb01fb9412a96101bd35c09795b0900f3e9813bcb41322f7b53614"
-    sha256 cellar: :any_skip_relocation, monterey:       "98b17a309e619e4929a360995dfa957a669751acf45280b682e80bb2c6c86148"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0d5b4274a3d9baee7be9cdc970476822a1f09e242443232eb16d3d3f3a82a54e"
-    sha256 cellar: :any_skip_relocation, catalina:       "ab22f8a01e93b16b45b80a4e1d146ba3178c34e96c30fbf99f18f41cb202a421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d772d1f326b1e408054f95c2987bcca0073684ffed11112e8916a72d1ade255"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "efb26e147e3adb17200dff7703b4a3b9774da10028972a06086fbf772854577e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "286096541b28a98eaa4ce89e84a39a4a0887f48df1bf768d0de554938ea70354"
+    sha256 cellar: :any_skip_relocation, monterey:       "5142051ba1600f79ada909c8b407d0b44e85bc98c5e445f27e9682fc3dd8bcf2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fa3ba12b6e35505bffb58e7669ce1492eb71e46104ad28c03dbc3de9d69d3070"
+    sha256 cellar: :any_skip_relocation, catalina:       "46fadb754662152c2ba10f72d6cb9898f042c1dfb7d430ab9389f17bb4f348af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1949b3858d1daaee412a24d3f14f4ca9c5ddf3080056f95529f711350386a65"
   end
 
   depends_on "go" => :build

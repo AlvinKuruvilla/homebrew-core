@@ -3,17 +3,17 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/0b/c5/45624349729103aecbf8c818f1f655d522bcbb9e127ef8e712e78a8b491d/pipenv-2022.4.21.tar.gz"
-  sha256 "3f93229de25a4c3a658249f48407b80f347f076640a9fd50c476a2876212f781"
+  url "https://files.pythonhosted.org/packages/0e/51/e4e143da178f9dfe67af3196f615159eb3b28eddfbfbc8dc02628dd5567d/pipenv-2022.5.2.tar.gz"
+  sha256 "71d510c20f99ea5cd3c951f8203140197bcc79fc21a0d74924f97c726a0f2bd3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "736301f3fc61c779fdfec039bee6044eee711558ade29e71abb1e38086bdd4b1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e6bd759c6da20ee49e9a2b3f4ef07ad778bb6da91ec35dde437989f57c68026f"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b20d887e43a048526f3b2fd1899a9632e33e56e0a890334ed9e31f12bee3e31"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a7ae8704fb8803c5cad648427d8aed717ad23f8fe1e11aadce52cbc380f27fc0"
-    sha256 cellar: :any_skip_relocation, catalina:       "95df31f374e4a5eaac586db598026950cc14b81c8c7ae3c397fe2f0d7d33339b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9327542a27e6143282b92cdcdc0a24646314399bc3938e98ee0bfb966323fc5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71fcad09bbc095d27e88ac10d29f5c143b301b25e17c4775091dd01202874ee4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f3b5018bea2970e7d0f7132ad413937fb27b78efc7e51e69be9f3b7f8869a5b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "011ab0bc5bd73b9e30cbd4dab371117009f980263b0faa5f4317ecad109de8da"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bacaf0364f5e0f9120ffd496fdb8c772237a2c1a443187070cbb9a598ee7e792"
+    sha256 cellar: :any_skip_relocation, catalina:       "1ea0308e8e6f11b26609e54186e21db4c044ce56437925127fd6f00ba35fb110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73607f4a9bdb2a13dd6871303d2d9c7d4f1a3df4cdebc61bd7b6a1bd7c24c698"
   end
 
   depends_on "python@3.10"

@@ -4,7 +4,7 @@ class Pdal < Formula
   url "https://github.com/PDAL/PDAL/releases/download/2.4.0/PDAL-2.4.0-src.tar.gz"
   sha256 "c08e56c0d3931ab9e612172d5836673dfa2d5e6b2bf4f8d22c912b126b590b15"
   license "BSD-3-Clause"
-  revision 1
+  revision 3
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
   # The upstream GitHub repository sometimes tags a commit with only a
@@ -19,12 +19,12 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256                               arm64_monterey: "8405c1fbd8daa37e08f631c5d6872f6acecc4ae8cae41f46dc66b451e01d189c"
-    sha256                               arm64_big_sur:  "c7bed4f32900664bfa9c4bb37decbaeb2cd56fd398d78a1c9dd2f9f9ceeb55d0"
-    sha256                               monterey:       "e4be0bfa5723b80f2a6a40516405920a288655974cbf254d6120c4b2aa466bac"
-    sha256                               big_sur:        "3087d58b14d2a842e712b7f630535b256b8499b726a7183af4de5cc0a0f68f1f"
-    sha256                               catalina:       "2a8f446d8be02ec9216900410107ef519f7aa31986d52ad46f15cedf66e1e2a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe23cbb8b0514dbe5611ef6ec86797475c16a2352ec9ef3413487856baa44d60"
+    sha256                               arm64_monterey: "60adcdce893074c077feed906fdc37eff3fd490bac6817691e44003486d9e59c"
+    sha256                               arm64_big_sur:  "7f6b74bbc10baa540756d992dd74af1d4865638b7c402ee8002461bb6ca42baa"
+    sha256                               monterey:       "acfcf85ae15a0be32dcaabf6641303b3d2a66e41c412faa690da649cdbdf73d9"
+    sha256                               big_sur:        "dff0336342ab6f61963635cd86fd264f928fabfdcf320fd7122a0da1d5b097e8"
+    sha256                               catalina:       "c65305bd9e3378019a324d75e38cce6ba60c78dfce8606d815b262c20e092463"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f739ad0a0756f1a61bbe3a413b0d1efffa4bd020e43a6b6d8cec31dcc0c3a09"
   end
 
   depends_on "cmake" => :build

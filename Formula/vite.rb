@@ -3,17 +3,17 @@ require "language/node"
 class Vite < Formula
   desc "Next generation frontend tooling. It's fast!"
   homepage "https://vitejs.dev/"
-  url "https://registry.npmjs.org/vite/-/vite-2.9.5.tgz"
-  sha256 "18b59edb914df39222726ac85489dfb46fa312e675fc8a086e2e7ec3aadfa59f"
+  url "https://registry.npmjs.org/vite/-/vite-2.9.9.tgz"
+  sha256 "85984e9d583ba45f624973d7b921607b0ac061b6675f80893c51e39699cfafc0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a251832bc493b681edb4867099c33b60c9b666a0f89ce17e874d749719587a1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8a251832bc493b681edb4867099c33b60c9b666a0f89ce17e874d749719587a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "07f6c742a43dc6c2df0b3e0f7798f21ba507cd58c7e633817766b4e55a9b6772"
-    sha256 cellar: :any_skip_relocation, big_sur:        "07f6c742a43dc6c2df0b3e0f7798f21ba507cd58c7e633817766b4e55a9b6772"
-    sha256 cellar: :any_skip_relocation, catalina:       "07f6c742a43dc6c2df0b3e0f7798f21ba507cd58c7e633817766b4e55a9b6772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e49f44c178252939f7d36e2e9a61e0b6ab1a49af6e28e1fb2edd438cbe1bd0bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5f64191652686db6fe4d8a2b603407af0b4c7c0774dc25a6308b6d5a698f968"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5f64191652686db6fe4d8a2b603407af0b4c7c0774dc25a6308b6d5a698f968"
+    sha256 cellar: :any_skip_relocation, monterey:       "6407d946c0f86470282ddfa1a9aec06df64fbfeb4c4d1b272f17c8c3c3619a56"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6407d946c0f86470282ddfa1a9aec06df64fbfeb4c4d1b272f17c8c3c3619a56"
+    sha256 cellar: :any_skip_relocation, catalina:       "6407d946c0f86470282ddfa1a9aec06df64fbfeb4c4d1b272f17c8c3c3619a56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4946473487e8371c4099d169de866ba2618f7c0c53127541d268dd796f4da185"
   end
 
   depends_on "node"

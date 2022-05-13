@@ -19,6 +19,9 @@
     ],
     "exclude_packages": ["pycrypto", "six"]
   },
+  "arxiv_latex_cleaner": {
+    "exclude_packages": ["pillow", "six"]
+  },
   "athenacli": {
     "exclude_packages": ["six", "tabulate"]
   },
@@ -75,6 +78,7 @@
     "exclude_packages": ["junit-xml", "six"]
   },
   "charm-tools": {
+    "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
   },
   "checkov": {
@@ -92,6 +96,9 @@
     "exclude_packages": ["six"]
   },
   "credstash": {
+    "exclude_packages": ["six"]
+  },
+  "cruft": {
     "exclude_packages": ["six"]
   },
   "csvkit": {
@@ -178,6 +185,7 @@
   "jenkins-job-builder": {
     "exclude_packages": ["six"]
   },
+  "jinja2-cli": "jinja2-cli[yaml,toml,xml]",
   "jupyterlab": {
     "exclude_packages": ["six"]
   },
@@ -200,6 +208,7 @@
     "exclude_packages": ["six"]
   },
   "magic-wormhole": {
+    "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
   },
   "mkdocs": {
@@ -285,6 +294,9 @@
     "exclude_packages": ["six"]
   },
   "protobuf": {
+    "exclude_packages": ["six"]
+  },
+  "pwntools": {
     "exclude_packages": ["six"]
   },
   "pydocstyle": "pydocstyle[toml]",
@@ -477,9 +489,9 @@
   "tarsnapper": {
     "exclude_packages": ["six"]
   },
-  "trezor-agent": {
-    "exclude_packages": ["pillow", "six"],
-    "extra_packages": ["ledger-agent", "keepkey-agent"]
+  "termius": {
+    "package_name": "termius",
+    "exclude_packages": ["six"]
   },
   "theharvester": {
     "exclude_packages": ["six"]
@@ -489,6 +501,10 @@
   },
   "tox": {
     "exclude_packages": ["six"]
+  },
+  "trezor-agent": {
+    "exclude_packages": ["pillow", "six"],
+    "extra_packages": ["ledger-agent", "keepkey-agent"]
   },
   "trzsz": {
     "extra_packages": ["trzsz-iterm2"],
