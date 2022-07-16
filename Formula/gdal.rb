@@ -1,10 +1,9 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://www.gdal.org/"
-  url "https://download.osgeo.org/gdal/3.4.3/gdal-3.4.3.tar.xz"
-  sha256 "02a27b35899e1c4c3bcb6007da900128ddd7e8ab7cd6ccfecf338a301eadad5a"
+  url "http://download.osgeo.org/gdal/3.5.1/gdal-3.5.1.tar.xz"
+  sha256 "d12c30a9eacdeaab493c0d1c9f88eb337c9cbb5bb40744c751bdd5a5af166ab6"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -12,12 +11,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "78aec6224fd17b55b733c900c9c188c5ec66fb55c801528af80565f6e26dca72"
-    sha256 arm64_big_sur:  "16e08308265036cab56d1616cf9e927bc2fa8b67be7697ca69894bae98cce762"
-    sha256 monterey:       "f3109664e495afedc8463a20efc5517c321d2da599ff21e9c75f69854dc19cd4"
-    sha256 big_sur:        "80043980b1a1d64b4e341dc7685dd2d2f31a0d628b018209b1d863aadda3dad1"
-    sha256 catalina:       "31683c809d2aff41cba686b93c4f71390dda75c4a30c40533f29b3a00fa885f4"
-    sha256 x86_64_linux:   "c6b4edb2b444fad196debf16417346e7022306cbdccd1ff66081e785ae8cc5d3"
+    sha256 arm64_monterey: "f0c1b8b744a2979ed67892cff0ceb6228df4970541bbcfe97a50740e49ada1ec"
+    sha256 arm64_big_sur:  "4b2c5e84fd44184e4922a7cb2d2ccb30ee9b13fa6967fd99234ef25d1bd579af"
+    sha256 monterey:       "648443c770fda1ec29abace3ce507a9bee7edd2943bc95410db6a75ff30a538c"
+    sha256 big_sur:        "e596f19a061dcb442ed308c04a20fa56d6b22d5f317bd20eb97228ab6e549031"
+    sha256 catalina:       "36d0ad40470782ba1ed00815f59b23109d0d87121a3e684085abf172375fb61d"
+    sha256 x86_64_linux:   "cd2e4bd45d60ef01d793c9c39cfc31045669d31107e58bf9d0680a70ae905f4b"
   end
 
   head do

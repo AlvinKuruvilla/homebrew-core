@@ -1,18 +1,18 @@
 class Xmake < Formula
   desc "Cross-platform build utility based on Lua"
   homepage "https://xmake.io/"
-  url "https://github.com/xmake-io/xmake/releases/download/v2.6.5/xmake-v2.6.5.tar.gz"
-  sha256 "868f109f660d3f42d8f67aad71b8075b7c3b606d7529956bfc94ad052bb8c1bd"
+  url "https://github.com/xmake-io/xmake/releases/download/v2.6.8/xmake-v2.6.8.tar.gz"
+  sha256 "2f74698abbb009dfe0e80399a94e7a903f2fb12c2fec503cd6152a52a1469013"
   license "Apache-2.0"
   head "https://github.com/xmake-io/xmake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "85b7c3125fecdc983d44faa26b29f6a03e997fdfcc7dc90a8af5fbf1e60e1c73"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f6afc9d2060838214ca517c1f59271742519baa8c429a952fd3c04952005323d"
-    sha256 cellar: :any_skip_relocation, monterey:       "71b7f08020ce93d0519d0cab7fa0aa081ab2f3880b802dd2ffde04d092f238eb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5dbece780215f07b4769e47dd1fcb044553272a75fb42237d118274547fc9aad"
-    sha256 cellar: :any_skip_relocation, catalina:       "41af3e93e9539e10df6ec63841a6cddbaec0df56ef47b56abffe05f7da4940d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e89453aafcecf53467b9d1a0125c37cda263314ca61bd4492d4acf61445501f6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0dc175d56d217f3d7776c12530053428b330e3f439c9e9f3370349480e64e448"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3c5dbad2cec4c2746469d7e1cd5abcdffd006b0fe19e4a47a8758f1863b0b6be"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ef3a364d758e311c4643bcd77462a365580e835f21c0bc13908fbb7734879c0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fcc32556cac33b11cbe915b6a10791e1416afa9bb0a2a26e1f9b639e36f1b01d"
+    sha256 cellar: :any_skip_relocation, catalina:       "5b0c0d5f10049920305b6f68ccbba2ab812c7a7b4ff873827680e94fd0e2aea1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfae0d8d52803802de3b2a6e497224b5d62026081a143e8ccf9bd607d2bf4cea"
   end
 
   on_linux do

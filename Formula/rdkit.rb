@@ -1,8 +1,8 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
-  url "https://github.com/rdkit/rdkit/archive/Release_2022_03_2.tar.gz"
-  sha256 "e06ac1ea39a3200d27aef4d77745bba27fadfcac22bb115ffa204707487e9ae1"
+  url "https://github.com/rdkit/rdkit/archive/Release_2022_03_4.tar.gz"
+  sha256 "e587a7251d8c7df0139652c004bb9384c90dd335111391526643d319572f4c28"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -15,15 +15,14 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "1d5dc82ecca2de13955e1e9d913da665b3788688dd6df7078ccda3270e207a9f"
-    sha256 cellar: :any,                 arm64_big_sur:  "e15d526b483d0eeb6c0b8d8af2fb2da1ffbf3016df7fe69ca85d22847431e3e5"
-    sha256 cellar: :any,                 monterey:       "6f51d288160a11dbc9103041d7e74690cec79ad01300656718e3ab83fd4a286e"
-    sha256 cellar: :any,                 big_sur:        "d9b100dee85e112b6f88a8fe1bfad87e9a27f723872464e5a65e81c9afb85b6f"
-    sha256 cellar: :any,                 catalina:       "c7848d2cb5c5cdfe961fbb4cad39191130c3a5cf322730663e89d49526226bed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7eefff7697ed7824736d6c5535714b14f0f7fa1647d149ab072b56fd4098dc4b"
+    sha256 cellar: :any,                 arm64_monterey: "d4e6875a4d9a8adfaca6df02e871aeb1d891d4d01088edb4273517312d67d85b"
+    sha256 cellar: :any,                 arm64_big_sur:  "39c2ac4ee29041704f034fa651b3b75c5bfcaab7fc54cc9448cb2870a1d3af4e"
+    sha256 cellar: :any,                 monterey:       "6e55f69cb29ddacf3d9b97628a93a9e6af1a0e07ba7afc26087a313b8d9686aa"
+    sha256 cellar: :any,                 big_sur:        "4c4f18593d50b1a82482e7138e57aec6fd000de20ac5bae9b8073a080307d45f"
+    sha256 cellar: :any,                 catalina:       "f6225fc16d559b86237cbe6088757b14dd7ea233952013ecdf08c0a5121f2c6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d278cc193c4fd2ef3c4a0f15df35ee0e93f2734931577439dcd1d8996a47e895"
   end
 
-  depends_on "catch2" => :build
   depends_on "cmake" => :build
   depends_on "swig" => :build
   depends_on "boost"
@@ -72,7 +71,6 @@ class Rdkit < Formula
       -DPYTHON_INCLUDE_DIR=#{py3include}
       -DPYTHON_EXECUTABLE=#{python_executable}
       -DPYTHON_NUMPY_INCLUDE_PATH=#{numpy_include}
-      -DCATCH_DIR=#{Formula["catch2"].opt_include}/catch2
     ]
 
     system "cmake", ".", *args

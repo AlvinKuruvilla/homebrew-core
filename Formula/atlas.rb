@@ -1,18 +1,18 @@
 class Atlas < Formula
   desc "Database toolkit"
   homepage "https://atlasgo.io/"
-  url "https://github.com/ariga/atlas/archive/v0.3.7.tar.gz"
-  sha256 "e958e6e31cf7f04f082939322875165d38685e1a2f59334733dd47c44c19b747"
+  url "https://github.com/ariga/atlas/archive/v0.5.0.tar.gz"
+  sha256 "927f6dd85842ad1fe7d4f0cb891c98ce51a1adde65391877caa8e760ff482dab"
   license "Apache-2.0"
   head "https://github.com/ariga/atlas.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4eed4bc6c5f3feb77e7418b226de83a65de552a357575cb01ab5694cd383fa0b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "586520c4cd1b5fef5dd3b303a28db3fb5b7a18f7d4c11dd2d458dafc7cb0876f"
-    sha256 cellar: :any_skip_relocation, monterey:       "f09196071bec3303a4f70d12c728b05e1419921dbfe5330c6087a47fe8f67b45"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0e3d8f12bffbd62192607bfe8c2c6d72e088029555d246aafede105087e381bc"
-    sha256 cellar: :any_skip_relocation, catalina:       "7e431d5b913036492241df603d3dc89dd03180bfa2d94eeb690a773338e49ea8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3a318452852655cab9aaa051007485885204ef9d572405beeaa541c371ac37a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7a15df2604c69878af0a5ee6504d6971ffb90cb5ead8d54946fdf786c71ae48"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b4f8c0e939f16fa655ba99428e8f50703c556bfb54662c1de1c8e0e48695d27"
+    sha256 cellar: :any_skip_relocation, monterey:       "57e595d7a7d033601cd706d4b1ec7ae03a60d7efcabf7b035cae9f70f52b78a8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c1a5bbead2d2a49ec2abed3bc10c7a63528b2e6fd613b4cf4391818f3e066dba"
+    sha256 cellar: :any_skip_relocation, catalina:       "3398b2e59bc7ff7f5b268300461f34c5645a5786865610ec9540c229a0e8e3b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05b39d9e4bb1c3ed39551125895d434639aeee25fe074d6d84d75a0f2ec16a00"
   end
 
   depends_on "go" => :build
@@ -20,9 +20,11 @@ class Atlas < Formula
   def install
     ldflags = %W[
       -s -w
-      -X ariga.io/atlas/cmd/action.version=v#{version}
+      -X ariga.io/atlas/cmd/atlas/internal/cmdapi.version=v#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/atlas"
+    cd "./cmd/atlas" do
+      system "go", "build", *std_go_args(ldflags: ldflags)
+    end
 
     bash_output = Utils.safe_popen_read(bin/"atlas", "completion", "bash")
     (bash_completion/"atlas").write bash_output
@@ -36,7 +38,7 @@ class Atlas < Formula
 
   test do
     assert_match "Error: mysql: query system variables:",
-      shell_output("#{bin}/atlas schema inspect -d \"mysql://user:pass@tcp(localhost:3306)/dbname\" 2>&1", 1)
+      shell_output("#{bin}/atlas schema inspect -u \"mysql://user:pass@localhost:3306/dbname\" 2>&1", 1)
 
     assert_match version.to_s, shell_output("#{bin}/atlas version")
   end

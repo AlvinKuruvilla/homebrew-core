@@ -1,17 +1,17 @@
 class Brook < Formula
   desc "Cross-platform strong encryption and not detectable proxy. Zero-Configuration"
   homepage "https://txthinking.github.io/brook/"
-  url "https://github.com/txthinking/brook/archive/refs/tags/v20220501.tar.gz"
-  sha256 "31474d3a9667a153986710b989d99a4f971255f407d47eebaf15b6fc9c2f4128"
+  url "https://github.com/txthinking/brook/archive/refs/tags/v20220707.tar.gz"
+  sha256 "377d6be82a8e122cc2e1c87ea10d2f404be6e4cf85304f329b01654e8f551753"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "250ef1e71e1ad92daf620eb3db2db76b20488612eb1fcf20924848ca0d29e80d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68f7a3ca9c1bb5410572325e5fcfe63b4512eba1436f6c5dad280d3887073cf5"
-    sha256 cellar: :any_skip_relocation, monterey:       "406f6a75ef631958da89f59c8def5359792210fb7dce1f18a64d16ffd6fe8eda"
-    sha256 cellar: :any_skip_relocation, big_sur:        "81a0773a91102467aabd4f3d4546150f98481a22e333aea44d91f49b7347ce30"
-    sha256 cellar: :any_skip_relocation, catalina:       "83048afb43d2820605ce1202c817078cedc51ecb4769b95d9822e5d29421138f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1e0ee782d1a17445855b2d432cdb4e844c1fb7a4fc3a92d5e2fa3d908659c95"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5a5174d875e8d580275dab0e869d326be4db15c3dc3ea3e6ac55378267741d0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ee982490ddd05b9cad8aae2d2152342b50459402fc348c76e20dfc32f556f835"
+    sha256 cellar: :any_skip_relocation, monterey:       "88944b9e0620ca134dbcff68d262024b34ef6c26d4c79b4ceb9098c86c3610ad"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2cd4525865739fd62d6d9bb3ae19c9a455bb12636cd1dbf0716660369bd4a237"
+    sha256 cellar: :any_skip_relocation, catalina:       "3afa95e3386434d472b13b7ec33466f789006fa1ea0088872cdefd2b25271f2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "378d428dad55eaca5496098754d76eb31ab44dd29b0f0952567a7b0a0be4124e"
   end
 
   depends_on "go" => :build

@@ -1,26 +1,36 @@
 class PysideAT2 < Formula
   desc "Official Python bindings for Qt"
   homepage "https://wiki.qt.io/Qt_for_Python"
-  url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.2-src/pyside-setup-opensource-src-5.15.2.tar.xz"
-  sha256 "b306504b0b8037079a8eab772ee774b9e877a2d84bab2dbefbe4fa6f83941418"
+  url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.5-src/pyside-setup-opensource-src-5.15.5.tar.xz"
+  sha256 "3920a4fb353300260c9bc46ff70f1fb975c5e7efa22e9d51222588928ce19b33"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
-  revision 2
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "b4b284bad87b89396d35732b9f509b653c2f63c1dc3d7ca63174d2c2dc377d30"
-    sha256 cellar: :any, arm64_big_sur:  "e432cfa5235290c62d9880bead26e893d1b9a3720a986b5e75146a6f4f06811e"
-    sha256 cellar: :any, monterey:       "0fd3d7a6d1a73189e3c6fd1a4fd1d23f0dc645ab4bf9dbc390a6c8f4b2c96c3b"
-    sha256 cellar: :any, big_sur:        "d8ac145f45d791c6967ed76ce24bbfd9b111eabeb6459824aca396d50d08c858"
-    sha256 cellar: :any, catalina:       "ac9f88f0bf1ed4417551c57342cfdeb328c28b417cb6ec3dc4dd78451bfaaf02"
+    sha256 cellar: :any,                 arm64_monterey: "ccd1901a866f8125d977d0f73513dec49b76fad77a4d91f0d22cbab8abefddf4"
+    sha256 cellar: :any,                 arm64_big_sur:  "39f714aa8636607bac587c8cf768f0922c27a42881585892dd6b5af84ca3b749"
+    sha256 cellar: :any,                 monterey:       "0aa9567489b0a540bfc750c6cb9fb0dc4a57769466291ed690d8b9a3af40b2c8"
+    sha256 cellar: :any,                 big_sur:        "c5955be508ce42b9d637b0875c30bb26e324582318434f86647bc355b4306b88"
+    sha256 cellar: :any,                 catalina:       "0a5fa4c6ac76e9b99cd59a2b99d41d64ff1fc5ca264498828c7f80e73d97e3ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4b7fa31aa6b94fc83035a0f27d3581a8e107ffc6ce2ad4eb665012ad2d3eb9b"
   end
 
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
   depends_on "llvm"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "qt@5"
+
+  uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
+
+  on_linux do
+    depends_on "libxcb"
+    depends_on "mesa"
+  end
+
+  fails_with gcc: "5"
 
   # Don't copy qt@5 tools.
   patch do
@@ -29,27 +39,40 @@ class PysideAT2 < Formula
   end
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
+    rpaths = if OS.mac?
+      site_packages = Language::Python.site_packages("python3")
+      prefix_relative_path = prefix.relative_path_from(prefix/site_packages/"PySide2")
+      [rpath, "@loader_path/#{prefix_relative_path}/lib"]
+    else
+      # Add missing include dirs on Linux.
+      # upstream issue: https://bugreports.qt.io/browse/PYSIDE-1684
+      extra_include_dirs = [Formula["mesa"].opt_include, Formula["libxcb"].opt_include]
+      inreplace "sources/pyside2/cmake/Macros/PySideModules.cmake",
+                "--include-paths=${shiboken_include_dirs}",
+                "--include-paths=${shiboken_include_dirs}:#{extra_include_dirs.join(":")}"
+      # Add rpath to qt@5 because it is keg-only.
+      [lib, Formula["qt@5"].opt_lib]
+    end
 
     args = std_cmake_args + %W[
+      -DCMAKE_CXX_COMPILER=#{ENV.cxx}
       -DCMAKE_PREFIX_PATH=#{Formula["qt@5"].opt_lib}
-      -GNinja
-      -DPYTHON_EXECUTABLE=#{Formula["python@3.9"].opt_bin}/python#{xy}
-      -DCMAKE_INSTALL_RPATH=#{lib}
+      -DPYTHON_EXECUTABLE=#{Formula["python@3.10"].opt_bin}/python3
+      -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
+      -DFORCE_LIMITED_API=yes
     ]
 
-    mkdir "build" do
-      system "cmake", *args, ".."
-      system "ninja", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
-    ENV.append_path "PYTHONPATH", "#{lib}/python#{xy}/site-packages"
+    python = Formula["python@3.10"].opt_bin/"python3"
+    ENV.append_path "PYTHONPATH", prefix/Language::Python.site_packages(python)
 
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import PySide2"
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import shiboken2"
+    system python, "-c", "import PySide2"
+    system python, "-c", "import shiboken2"
 
     modules = %w[
       Core
@@ -59,18 +82,15 @@ class PysideAT2 < Formula
       Network
       Quick
       Svg
+      WebEngineWidgets
       Widgets
       Xml
     ]
 
-    # Qt web engine is not supported on Apple Silicon.
-    modules << "WebEngineWidgets" unless Hardware::CPU.arm?
+    modules.each { |mod| system python, "-c", "import PySide2.Qt#{mod}" }
 
-    modules.each { |mod| system Formula["python@3.9"].opt_bin/"python3", "-c", "import PySide2.Qt#{mod}" }
-
-    pyincludes = shell_output("#{Formula["python@3.9"].opt_bin}/python3-config --includes").chomp.split
-    pylib = shell_output("#{Formula["python@3.9"].opt_bin}/python3-config --ldflags --embed").chomp.split
-    pyver = Language::Python.major_minor_version(Formula["python@3.9"].opt_bin/"python3").to_s.delete(".")
+    pyincludes = shell_output("#{python}-config --includes").chomp.split
+    pylib = shell_output("#{python}-config --ldflags --embed").chomp.split
 
     (testpath/"test.cpp").write <<~EOS
       #include <shiboken.h>
@@ -82,8 +102,10 @@ class PysideAT2 < Formula
         return 0;
       }
     EOS
+    rpaths = []
+    rpaths += ["-Wl,-rpath,#{lib}", "-Wl,-rpath,#{Formula["python@3.10"].opt_lib}"] unless OS.mac?
     system ENV.cxx, "-std=c++11", "test.cpp",
-           "-I#{include}/shiboken2", "-L#{lib}", "-lshiboken2.cpython-#{pyver}-darwin",
+           "-I#{include}/shiboken2", "-L#{lib}", "-lshiboken2.abi3", *rpaths,
            *pyincludes, *pylib, "-o", "test"
     system "./test"
   end

@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/91.8.0esr/source/firefox-91.8.0esr.source.tar.xz"
-  version "91.8.0"
-  sha256 "d483a853cbf5c7f93621093432e3dc0b7ed847f2a5318b964828d19f9f087f3a"
+  url "https://archive.mozilla.org/pub/firefox/releases/91.11.0esr/source/firefox-91.11.0esr.source.tar.xz"
+  version "91.11.0"
+  sha256 "e59bbe92ee1ef94936ce928324253e442748d62b5777bc0846ad79ed4a2a05a4"
   license "MPL-2.0"
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
@@ -15,12 +15,12 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "58e0d57e0b665cc299824c4aac248e4ff5600473ccfbd1337f5613487fe7b528"
-    sha256 cellar: :any,                 arm64_big_sur:  "7daf97c2fa2f451015e23ac12e299d87f0429ce3e286ba7f9686d4535dd4171e"
-    sha256 cellar: :any,                 monterey:       "0ca393a20f0b977095e145d73fffdf17e8d0935c31eb260b1998755463f59f3c"
-    sha256 cellar: :any,                 big_sur:        "e965307dfbd69600c135e79988922b075dc09c2107aedc11a4739e8103699335"
-    sha256 cellar: :any,                 catalina:       "34f6b36ad1a9f6b2c78b7317eb9b6ea3eb35c0d2a9afb36851efc47665f33cd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66a677ffad037cc900becf234826a5112735da14c4213f7b286683dd744ddd9e"
+    sha256 cellar: :any,                 arm64_monterey: "640164a045d6aec276bca42157a1cc236692ceda4678644260699a7bc9423385"
+    sha256 cellar: :any,                 arm64_big_sur:  "ef073dbbfd5f688bddd0d8c0e3c018003fc915f3856c9a07cdc62bf1ddbab8bd"
+    sha256 cellar: :any,                 monterey:       "73ed89ed3f7eb7b6bc8f3321d3e79e2b7a79338dbdf2f6bfcd6e3ba1e47d489a"
+    sha256 cellar: :any,                 big_sur:        "88960b7ca336a62efa51d3049bbd6404f8d212d4fb8fc1203dfbd73c4cc766f1"
+    sha256 cellar: :any,                 catalina:       "ecd70bb4c127202a640ca517bd0ff06cd6a5955d40f430ee906c2f445d1ca966"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa9006c14cc5102cafc76576f16fad2bcfe3ce769ac775bf1065815cf5d9aa3c"
   end
 
   depends_on "autoconf@2.13" => :build

@@ -1,8 +1,8 @@
 class Haproxy < Formula
   desc "Reliable, high performance TCP/HTTP load balancer"
   homepage "https://www.haproxy.org/"
-  url "https://www.haproxy.org/download/2.5/src/haproxy-2.5.6.tar.gz"
-  sha256 "be4c71753f01af748531139bff3ade5450a328e7a5468c45367e021e91ec6228"
+  url "https://www.haproxy.org/download/2.6/src/haproxy-2.6.1.tar.gz"
+  sha256 "915b351e6450d183342c4cdcda7771eac4f0f72bf90582adcd15a01c700d29b1"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -11,17 +11,18 @@ class Haproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "0c326a830aacd5f57e8f8ef9fbd1df2a4aa6b3ba5630682ac9d15707918b7ff0"
-    sha256 cellar: :any,                 arm64_big_sur:  "9a047f0d68096c98da8dd39b1195f3949fde22ae77d3bb31a0adf8294a5c6087"
-    sha256 cellar: :any,                 monterey:       "ad4fd02122073ac6f9d7184e89a87fddf5f5f549e4599fe22c4344d6232afa24"
-    sha256 cellar: :any,                 big_sur:        "656aecc60891908f93130f6ee39db64ccfa26acfb03ac64f6cb74251d2534907"
-    sha256 cellar: :any,                 catalina:       "74bea03b45e17d914e655f1b2b4b8a52722af56e0c59f45be52be46bf2ece1e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb7477dd16e034f7e3630b5561a942d57b39b94e4d25556731104f8b140fbc36"
+    sha256 cellar: :any,                 arm64_monterey: "9c3d8be2493d4c57ce6e12ce1d3eea9c1c957d5558743a79b23fb9900663eaf3"
+    sha256 cellar: :any,                 arm64_big_sur:  "439bd181139a39f81d6ea5cdbf3e1d2206431a5cf28de0f5b97db052af220445"
+    sha256 cellar: :any,                 monterey:       "69151ee0db7ebc89735ff0ffe2d3ebe0fdcc2419916f1f011b19ba47ac78aa5d"
+    sha256 cellar: :any,                 big_sur:        "832d8cc9e492a8473f81f94a8a6c2deaaad8f39315ad8118c1a69b2140460b94"
+    sha256 cellar: :any,                 catalina:       "272cf47d74b49217f208b0099fd268c9da1ce39d86878e019c71326e6aef88e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25e2ee246c20b103e12d65de243b442fb008526c40b903ec5ea3aedef2136314"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 
   def install

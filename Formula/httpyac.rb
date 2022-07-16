@@ -3,17 +3,17 @@ require "language/node"
 class Httpyac < Formula
   desc "Quickly and easily send REST, SOAP, GraphQL and gRPC requests"
   homepage "https://httpyac.github.io/"
-  url "https://registry.npmjs.org/httpyac/-/httpyac-5.4.0.tgz"
-  sha256 "c4a8b54c4224f1a1ca6edfb39c20e869293db0abff3c12d92be089e2e26795ee"
+  url "https://registry.npmjs.org/httpyac/-/httpyac-5.5.3.tgz"
+  sha256 "6952a5b6875c77fe0174621a93614c3612224388e50f45da506c14d8bed33022"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4e96895eebb423aa65719052c01c2b6f0e08d78a28a1234b1f6d5ee8409e16b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c4e96895eebb423aa65719052c01c2b6f0e08d78a28a1234b1f6d5ee8409e16b"
-    sha256 cellar: :any_skip_relocation, monterey:       "a40769e48ab695d713882c1ac152c5d967257a2cd4027a11296aeaec20805e77"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a40769e48ab695d713882c1ac152c5d967257a2cd4027a11296aeaec20805e77"
-    sha256 cellar: :any_skip_relocation, catalina:       "a40769e48ab695d713882c1ac152c5d967257a2cd4027a11296aeaec20805e77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6668ea8ef22e75c45a776b5d527d183838730df61f212ddff9078eccd0c4aa26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "96a0cfc3fba863fc106127c13e7a3c169ad242217b84a7c3e25e5998bbfea569"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "96a0cfc3fba863fc106127c13e7a3c169ad242217b84a7c3e25e5998bbfea569"
+    sha256 cellar: :any_skip_relocation, monterey:       "4fbf1b7140bf9d590b7fad815908f7922197db213f00f1f6b0c544800f3223e3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4fbf1b7140bf9d590b7fad815908f7922197db213f00f1f6b0c544800f3223e3"
+    sha256 cellar: :any_skip_relocation, catalina:       "4fbf1b7140bf9d590b7fad815908f7922197db213f00f1f6b0c544800f3223e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e248dff1c6b38db44a18832af1fbbd73ab184424a143767bc4ae011b66ef111"
   end
 
   depends_on "node"

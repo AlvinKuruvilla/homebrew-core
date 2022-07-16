@@ -1,8 +1,8 @@
 class Immudb < Formula
   desc "Lightweight, high-speed immutable database"
   homepage "https://www.codenotary.io"
-  url "https://github.com/codenotary/immudb/archive/v1.2.4.tar.gz"
-  sha256 "dd7f7ef1bae8d34ebaa1bb8d1099a1b0809dd6bac0d36fdc279139087dcedb79"
+  url "https://github.com/codenotary/immudb/archive/v1.3.1.tar.gz"
+  sha256 "1c61ed3bd3bec5265d86a6adb61a8020b52b5ed180809ccf23faf078d24a329f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,17 +11,18 @@ class Immudb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2eb5d591b8b3d5cba6f21b72a25b45bd9e877826e385d775f1f8d0943915e85c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "56d2e49783d2e7cd1d8d294b8296103456798d8cbc88dc928f26ea61b39322aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "b79c1fbba63722c2f5d8b4baeff37c95d28cf8363d4acaaea3ab5abe0b09eb98"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b1c13f1a07cac939a8a1423106a05e63a11150b0cb228c160353323f57cddb98"
-    sha256 cellar: :any_skip_relocation, catalina:       "481624cee7d5f2d109f4c4f27befb332bee9e4772efb5ab655f001037ef3f9b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf822b40d8efd272a64b408352dcedf234003c94eed601b08df29c7214ece017"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "47a0a7ded0ecefb90fbb45eac377e1407540d6e7da6b91ffb9abbec759547548"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c0a3dd56e8b011e8e42d813828c61ddd46c6f5203be05ff457c63bc7c745315"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e37e307fc0585bc9868876fe7e92d332a744aedbfffb1bd077b7924882669d6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2e59414b861d4766632688b6f33f98fd834933e90bfe317492ad51db04a94fdc"
+    sha256 cellar: :any_skip_relocation, catalina:       "ce905a8dd1b841027cd2e79eff684af1e2b1207046f63a3f8ab3ed9c1903e532"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64b809adca6510ce7879397985ca33f8e1de676bb5453f594b0b753314cb2483"
   end
 
   depends_on "go" => :build
 
   def install
+    ENV["WEBCONSOLE"] = "default"
     system "make", "all"
     bin.install %w[immudb immuclient immuadmin]
   end

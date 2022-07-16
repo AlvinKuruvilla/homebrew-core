@@ -1,18 +1,18 @@
 class Kind < Formula
   desc "Run local Kubernetes cluster in Docker"
   homepage "https://kind.sigs.k8s.io/"
-  url "https://github.com/kubernetes-sigs/kind/archive/v0.13.0.tar.gz"
-  sha256 "e07e3a06c8a1d3861ebee3c2fecb027e839da8abf79c6f00c394b077e1f990fd"
+  url "https://github.com/kubernetes-sigs/kind/archive/v0.14.0.tar.gz"
+  sha256 "7850a3bb4c644622a1c643e63306ddcd76a5b729375df9bc97f87a82375b9439"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kind.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a7b6b34dfd45ad097b5ad3b5001a2e135141bba2a34863b0edc7ba2f52b038e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e6f5afdbd4bb2fa83f9b03ef8781f440529b60e18b937150aa852d5c240966e"
-    sha256 cellar: :any_skip_relocation, monterey:       "41f08d541f68838b9eb5ad31a17db48e97224b6a36f45dae736a8c8a195a590e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1cdd06d155b338767a66bb296ff81910fbaa3557cfc4cf43ed9a82053dc4a9c9"
-    sha256 cellar: :any_skip_relocation, catalina:       "674b16ed62f8ee9b7d330d88b2492e037968927d3a852e0f54a88984ec008df6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91e6cb05ccfb3d310f1c108af286f8323f7892a7c8faaec468634dca753b422d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aae21435a83ef7c8e3abe321c708dde07a2169a849b98969d45f14539f4aec84"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03a75bf5e690db31228c5a7c6933f5e320850b08891a23573b733acff97e6018"
+    sha256 cellar: :any_skip_relocation, monterey:       "17fd618a994d1ac7f4b5b96b21d77f624315f6180b02260cccf81769d9d8f8ac"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f6ec6c1fad09f6c0647f15f70311291d31d632586b2fc9624d0e876c2d4a8a0c"
+    sha256 cellar: :any_skip_relocation, catalina:       "17ab65161efe2a82e48fec0adda13593195e97c3433f879abf09ae55a7990ae7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b29f6a0492c893f1c8f421b5ea37f6180eb5bc1532f6f537777646eb00b66217"
   end
 
   depends_on "go" => :build

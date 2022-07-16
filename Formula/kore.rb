@@ -4,6 +4,7 @@ class Kore < Formula
   url "https://kore.io/releases/kore-4.2.2.tar.gz"
   sha256 "77c12d80bb76fe774b16996e6bac6d4ad950070d0816c3409dc0397dfc62725f"
   license "ISC"
+  revision 2
   head "https://github.com/jorisvink/kore.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Kore < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "27798ed9c1b2a244c3fa3e761e144355f2a076705e010b59e08bb42a0719008c"
-    sha256 arm64_big_sur:  "39db88c4d055465051a2846f355cb38fc325a1b112247e1e79599e8122109b40"
-    sha256 monterey:       "604404ff3fe51efa49e3b9f94149828c9d42b6d096e47eee029deb3d6b21489e"
-    sha256 big_sur:        "53662ab03e15d19f7fb230017a145c307aab2499e1a47c035cdad9ff39bdce01"
-    sha256 catalina:       "d8a80ba22d2ffad6156375e5e186ad028241157f03b0b3bf182e38459b552367"
-    sha256 x86_64_linux:   "a17fc962fc354caae564ddaf37e6e5209287c91fb503bd9a5a8e50a031934dd3"
+    sha256 arm64_monterey: "8a476b2e8a6f1876a3bb0f930b2ee67f440d2fc442dc99e98ee00b9535901b79"
+    sha256 arm64_big_sur:  "ebfe4e5da5636545f185e1535ee205389e1b71efc97242565470f72da11f4ac0"
+    sha256 monterey:       "ba1b874c9e8d25e1365258664b2e2f8355a587c755a737c84878b98013cb7ce4"
+    sha256 big_sur:        "99770a896f403b2f61ca845bc8fcbbb6ea625c62358802d2ab326a5d2f6af67e"
+    sha256 catalina:       "ef8323a13116686ae46c44f74f6dfb23a62b168681dc6913b2649fb4f2f96460"
+    sha256 x86_64_linux:   "a7be618efc5377bc7b4c5214466e016049273a1f5dcc4ae3d5db820f935f32df"
   end
 
   depends_on "pkg-config" => :build
@@ -27,6 +28,10 @@ class Kore < Formula
   def install
     ENV.deparallelize { system "make", "PREFIX=#{prefix}", "TASKS=1" }
     system "make", "install", "PREFIX=#{prefix}"
+
+    # Remove openssl cellar references, which breaks kore on openssl updates
+    openssl = Formula["openssl@1.1"]
+    inreplace [pkgshare/"features", pkgshare/"linker"], openssl.prefix.realpath, openssl.opt_prefix if OS.mac?
   end
 
   test do

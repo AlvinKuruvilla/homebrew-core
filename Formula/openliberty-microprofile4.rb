@@ -1,8 +1,8 @@
 class OpenlibertyMicroprofile4 < Formula
   desc "Lightweight open framework for Java (Micro Profile 4)"
   homepage "https://openliberty.io"
-  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/22.0.0.4/openliberty-microProfile4-22.0.0.4.zip"
-  sha256 "f9a58df9f7b689105bac74545fd451b2a562e17ab7e1a2df94fc13b13fc12a64"
+  url "https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/22.0.0.7/openliberty-microProfile4-22.0.0.7.zip"
+  sha256 "97fd0dc55a01028046bb400381ad23884abb73355f9d45df9c48008841e5a533"
   license "EPL-1.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class OpenlibertyMicroprofile4 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e8e0de3187c156401c4cb99a917e82af08f9d5170ea08d7fd91886bbeb18cfbf"
+    sha256 cellar: :any_skip_relocation, all: "480be03ec6d6d13dfc192544f3b2bb90f0a0ebf3b2635dde43e6b412f6470bc6"
   end
 
   depends_on "openjdk"

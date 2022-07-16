@@ -2,18 +2,18 @@ class Easeprobe < Formula
   desc "Simple, standalone, and lightWeight tool that can do health/status checking"
   homepage "https://github.com/megaease/easeprobe"
   url "https://github.com/megaease/easeprobe.git",
-      tag:      "v1.4.0",
-      revision: "8d7c5f749a0fe3d6073f3f010a538bf6ea4edb48"
+      tag:      "v1.6.0",
+      revision: "2f049eef2d4719f4c155a6cc14b6f49ba801cf47"
   license "Apache-2.0"
   head "https://github.com/megaease/easeprobe.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "65614a9f926fb9eeb6cdc07bcd5c152cd622c53c93b78904fc486bb88d8127c6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dcb076860023b6c2088c922f42029224a08520a707174179bf56a13df0c326b8"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f166bb0967b571b011c38ee69868a0db507452bf8cda1910e175a816d164fad"
-    sha256 cellar: :any_skip_relocation, big_sur:        "286cb976a3e53b39e8a80118bd14938178162d53f2e31922444b3252933fad64"
-    sha256 cellar: :any_skip_relocation, catalina:       "c0a635acd17029c4fec06987a2dbd7a197527fd6eafe5803fdd95c09c7a3242f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ae99766e9af864ac1a2886917a00c9343502afc1fa3cf87a57a8e7f87a20400"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c7d71714f2f2a2a1f031488709072489f8ae5b87682cc7be3eebc36a3ff60ec"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c3351e05338385e78266e99fa44a3a9d6ef6e788f0e08ed5202f87f22391b2d0"
+    sha256 cellar: :any_skip_relocation, monterey:       "523dd3455c61e4ebe2390d65f03b95a3f56b461fc14532dbc4b992da56707670"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0c2c69e1f3deaf7e8279a712ede1ba47d2d4ee71ba36d681d7ccf48e8ba63d4c"
+    sha256 cellar: :any_skip_relocation, catalina:       "2ccc65ea068a873cc4f6ce8f3da1f27f92375ed3fdffceb3e5e9bb37f50de06e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba40cacdfe8cb95f9a72c3836038ef09210c431be8a51872ef8574bf09d0cf3d"
   end
 
   depends_on "go" => :build
@@ -33,6 +33,10 @@ class Easeprobe < Formula
       http:
         - name: "brew.sh"
           url: "https://brew.sh"
+      notify:
+        log:
+          - name: "logfile"
+            file: #{testpath}/easeprobe.log
     EOS
 
     easeprobe_stdout = (testpath/"easeprobe.log")

@@ -2,10 +2,9 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https://coreos.com/operators/"
   url "https://github.com/operator-framework/operator-sdk.git",
-      tag:      "v1.20.0",
-      revision: "deb3531ae20a5805b7ee30b71f13792b80bd49b1"
+      tag:      "v1.22.1",
+      revision: "46ab175459a775d2fb9f0454d0b4a8850dd745ed"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
 
   livecheck do
@@ -14,17 +13,15 @@ class OperatorSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e7fc83b305d8fd672b1a68ed04d83afb2509393e07a105ba1922d11ee491986"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "239b1ada548023fa19a593d3f15267f7e370f5e2d30cb2c4be1045aa7b21a2aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "8fd164db5f3d9e183527aa2082d096c60b1f097a05e965d8daa308842f12dab5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c50a93409f48b97037f376aa565a58f3e0cd282b5d1cd730ffdbf3bb58f6fb3e"
-    sha256 cellar: :any_skip_relocation, catalina:       "17820af2c0902e9b7bede2a5747a553838160a2cbe603686aaa667b798345faf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0e9798f46d1f7f58da65b99dfbb3a242c2e1c8720c4979ea249c1818b1a02ee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b267743badd08ccc1de66d20f9fc9e93238de43eccfc7e800ef7ddddc29093db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cc88d0d467fe50014ee1c60c9a7787b61b9fb6aa524daa620ecc23eccfb9795c"
+    sha256 cellar: :any_skip_relocation, monterey:       "9288465f2b8e44f15e88bc9577c8c5fb52c2caaa353cb08fe6ff3690af4c1e96"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a71bddd97b21d58949a53f7fd8c5c20c80b55d2d8c5e312144105016af2dd2a9"
+    sha256 cellar: :any_skip_relocation, catalina:       "8b52499f5f54cff99233f82fa3d60bb7efe249dc77cee04b3d3457bbc548d28e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77c530a04d6f29dbddb60a9ede308a5fd987e19b6766c7febe1038285d65c497"
   end
 
-  # Resolves upstream issue: https://github.com/operator-framework/operator-sdk/issues/5689
-  # Should be updated to "go" when the following upstream issue is resolved: https://github.com/operator-framework/operator-sdk/issues/5740
-  depends_on "go@1.17"
+  depends_on "go"
 
   def install
     ENV["GOBIN"] = libexec/"bin"

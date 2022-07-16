@@ -1,18 +1,18 @@
 class Mapcidr < Formula
   desc "Subnet/CIDR operation utility"
   homepage "https://projectdiscovery.io"
-  url "https://github.com/projectdiscovery/mapcidr/archive/v0.0.9.tar.gz"
-  sha256 "997de8dd52581eeee2a065f7ffe10742ae82d97dcbc3e87d1abe5f696a6d9880"
+  url "https://github.com/projectdiscovery/mapcidr/archive/v1.0.1.tar.gz"
+  sha256 "8ea191b954a217b6a4bdc2111b9ac3c9b67bc05fb0e613d2bae8e45769851a35"
   license "MIT"
   head "https://github.com/projectdiscovery/mapcidr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ac41e42c44274af1087f7617d6117852d296a709256aca843e5fcce21faeb6e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4fe71eadf1f11dd53d1f3f80d5e4b5452726b7354b7b1ee4730b78bbabff54ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "02177d42c47d6efcf58e723fef68b350de0a690f27bd5567c9cc02f46b7bd9a2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5a3b04d400948239f5ae413b07a3a0eb0b07e7352d2d0c574a63fc7141b8562d"
-    sha256 cellar: :any_skip_relocation, catalina:       "5489ac992a3a2e420be5e4c08c3c4d0cc73f6af269706cc35cd8e4a5fc0b0fc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75fed0d65b5882bba6a5c32a84f8c834bcc55e3d68b2c5dcde1337f198cbcd46"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e66c9864c26f4b9b96fe649ffdf0f76998641ac5e83119aed9770852e306f74"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "064b51df363d485f1ed6411488beec2366040cce8703da981dd8dc12cf72f302"
+    sha256 cellar: :any_skip_relocation, monterey:       "95afb257909d16239b59c4615427647b2df094026f96a48c6fbac89504aed48f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "21f9de858d7f1347eebb92d2ef5b135788144535cdf13a1ecad20583c330b326"
+    sha256 cellar: :any_skip_relocation, catalina:       "4bbb48da30d0ca0c241ebe382c031b4fa8170ac738a925db5e0c7e866296fc2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a62bfbfdeb6d79df4a949784ed359fb9e87820a61a1346092b2ac7a8745a33c5"
   end
 
   depends_on "go" => :build

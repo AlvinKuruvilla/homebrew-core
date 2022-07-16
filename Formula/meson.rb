@@ -3,18 +3,18 @@ class Meson < Formula
 
   desc "Fast and user friendly build system"
   homepage "https://mesonbuild.com/"
-  url "https://github.com/mesonbuild/meson/releases/download/0.62.1/meson-0.62.1.tar.gz"
-  sha256 "a0f5caa1e70da12d5e63aa6a9504273759b891af36c8d87de381a4ed1380e845"
+  url "https://github.com/mesonbuild/meson/releases/download/0.63.0/meson-0.63.0.tar.gz"
+  sha256 "3b51d451744c2bc71838524ec8d96cd4f8c4793d5b8d5d0d0a9c8a4f7c94cd6f"
   license "Apache-2.0"
   head "https://github.com/mesonbuild/meson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74ec8b05193ad6f0a192ea976a898362d322d8a51056a0563baf60f844403ed8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f61040da2d88d7e57b8ec042d0f61fd88d1d296582d52203c5558acfc62d7b4b"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b26a7c72350fc2d72957a0b1b26393d6ce99f2f77d8f97eebc7b0bc174a227c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dd5c2f2ca156a974b1c85960091ece4a477211a79db360a925f86a9bfc4dd97c"
-    sha256 cellar: :any_skip_relocation, catalina:       "ce1d410239c715e3f42dd2dfcc193bd7db7a3cd50231029b6d76f73fe7b6bd9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3caf61e3ad496e94e4ce6292a01241bd7dd7ae2571bae949760e574b8fa80b1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bda96a21f30e861534c318ebfa80dde210b333b20b95b486933bb3c45f85fc2e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "569c7039b05c60513ff780ae8d0183b48304fce107ebff09000cec917ad3dd06"
+    sha256 cellar: :any_skip_relocation, monterey:       "fbfee5b3ea83512e6860b7d857356b55548470cd52ede5d8232fab47cf5bb2d2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "293976403ccb2e0e69aabda08bd3d4706cd6af64baced3293ff17b6728dbc2ae"
+    sha256 cellar: :any_skip_relocation, catalina:       "ef87988b46ed85ff7790c2f286e19da4382e687cf7056dbceb9c7b4ad11d6075"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22d3c30f3abe269394f8061af09926336d44fd7b26a92c3e2b7735a8d4b2e50e"
   end
 
   depends_on "ninja"

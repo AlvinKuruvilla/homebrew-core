@@ -1,19 +1,18 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://github.com/facebookincubator/fizz/releases/download/v2022.03.21.00/fizz-v2022.03.21.00.tar.gz"
-  sha256 "b2bb1f303ecb801ef691f8e63aea861d36ccfe17e6bdaa8160748639be6141b9"
+  url "https://github.com/facebookincubator/fizz/releases/download/v2022.07.04.00/fizz-v2022.07.04.00.tar.gz"
+  sha256 "48941c3726b99aa9b22480ff92cbe3715154df0a4330ad42485b3d7649167b76"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c75ef991f076121450c5abc6b7809778d3879642af181b32a1121180102a4d8b"
-    sha256 cellar: :any,                 arm64_big_sur:  "b1617c0b03ee4a013513ddf2c5091a61bc2188121a2d04ad9a9355dd5225fda8"
-    sha256 cellar: :any,                 monterey:       "3fbfc0062554ee2a2cad5c3e81de7b9d150814358386e3ad5b7715f84af59c82"
-    sha256 cellar: :any,                 big_sur:        "b9aab071aed12635a991f99a5fdf291b7110497e5cbc7c02dbed4fac8a5fa0ea"
-    sha256 cellar: :any,                 catalina:       "3886354862a6a0e6f0a37a7eafafa83a98b180c76e768482661a3e74006a3c93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9b2648ace1bd5910db6c5e94101afb6725e407d8216de7c45017e8a0993bb33"
+    sha256 cellar: :any,                 arm64_monterey: "0a16d13c03f99fd35c47f3528afda470d6653c1a7041344356ebb6fe002fa7bc"
+    sha256 cellar: :any,                 arm64_big_sur:  "c3bf550d89cbd822b1a7b1e2744d39f1e390a3efb0c4d24b289faf7a2d52b64c"
+    sha256 cellar: :any,                 monterey:       "f18901511e59bad74887af75336226bc375aeb481f0f24934c5ce6d7eed6ef4d"
+    sha256 cellar: :any,                 big_sur:        "4e44b686bc4ca8a8d5e899702499cb4877ce9b5cab1134533d9e9273f7975140"
+    sha256 cellar: :any,                 catalina:       "2d2a3bba223159fa034c5ea1723fcbb1a52ef14218c307ef1e9e67145a4a2b27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b3695a225c09c9803ac0a4a079b37a82df1c2a26c79ae55564d6d6e6cf430d5"
   end
 
   depends_on "cmake" => :build

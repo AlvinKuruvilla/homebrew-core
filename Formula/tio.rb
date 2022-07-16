@@ -1,23 +1,31 @@
 class Tio < Formula
   desc "Simple TTY terminal I/O application"
   homepage "https://tio.github.io"
-  url "https://github.com/tio/tio/releases/download/v1.37/tio-1.37.tar.xz"
-  sha256 "a54cd09baeaabd306fdea486b8161eea6ea75bb970b27cae0e8e407fb2dd7181"
+  url "https://github.com/tio/tio/releases/download/v1.44/tio-1.44.tar.xz"
+  sha256 "3d3e20ecc44ed674816d2d0421cce42c1a7af96753d3b3bc1d7b7f6b03192cd0"
   license "GPL-2.0-or-later"
+  head "https://github.com/tio/tio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "86b3ea95b85f3e8d833026c4f12920822683f78418c997cbbc634d9cd9ae97ac"
-    sha256 cellar: :any, arm64_big_sur:  "f1a58b0db83d70d16cb762bab607b273e18405da5acb57ce6cb6a32a6fc05139"
-    sha256 cellar: :any, monterey:       "6e52fa8b8f95a4117fde4607d28839965dcdf510fab7f3335bb1f8f3790b70fd"
-    sha256 cellar: :any, big_sur:        "98e16d3bd13972b3c219d6bf3b06cd0df4ca3bf5c2b1f28093a07f393de9537c"
-    sha256 cellar: :any, catalina:       "96b24ccbf28fc0664a6651948d9fe10166667a8d11d105b5474e34cd18cc2ba6"
-    sha256               x86_64_linux:   "5b58bd33e112c74a0261ebd2841959a00ba89fc640397a905b9eb7570add5436"
+    sha256 cellar: :any,                 arm64_monterey: "2fe0dbaef03a546dea0f861cb6dcfd044c1bb5dd59f0fa3f701e504a9bf30c11"
+    sha256 cellar: :any,                 arm64_big_sur:  "f1935feeffdb9b019ebd099d0fe3d855f6e30c675fab1e8dccec256ad58702e5"
+    sha256 cellar: :any,                 monterey:       "427ced11723fbf28ab3ee668d0b7c7b6b96d7aaf7fb5c32eb157b83a70768704"
+    sha256 cellar: :any,                 big_sur:        "83c288a9e5300a745d6e5ebdda16fad647de824916c1afc2f4f178de4d888eac"
+    sha256 cellar: :any,                 catalina:       "d75991647af2167e10d3dd6273c823c363ae1ed4bec6936e7e8b3dcacd531474"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c7cc52463ea91c23c6dd4b25dcdd30fc4c8afff59af9f01eb3e594374cc1593"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "inih"
+
+  # PR, https://github.com/tio/tio/pull/159
+  # remove in next release
+  patch do
+    url "https://github.com/tio/tio/commit/223f0c5d1304dd6295c77313fb6bd0c156755b62.patch?full_index=1"
+    sha256 "09459cd348fd3d451a82e9712599f82de5dc7457270147228bba1beed7b1545f"
+  end
 
   def install
     mkdir "build" do

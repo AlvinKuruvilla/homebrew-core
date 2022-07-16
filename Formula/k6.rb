@@ -1,17 +1,17 @@
 class K6 < Formula
   desc "Modern load testing tool, using Go and JavaScript"
   homepage "https://k6.io"
-  url "https://github.com/grafana/k6/archive/v0.38.2.tar.gz"
-  sha256 "cf46cc564facf0558b92322edc53620b46aea8cb07626105b47e6d0cc6d33dd3"
+  url "https://github.com/grafana/k6/archive/v0.39.0.tar.gz"
+  sha256 "46ecbd2bbf20634664e319b0c15526d580852c2e95b21900b0d2263b4bc44f8b"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c175e4dad587cd2ece5c809a848e4f6cd785c28942250d69c4beea4d1b3a59b8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "679ea08e9f762b80881e7061656a4cf35261848b986209e5a0b0612619c434fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "425fcf2d7114684ca8077860ed1e21d82f58cc52e2363155066bdbbf02565fe0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4c012abdae9eb02cd30991b46041af30cd232b3c6a6de54c8fd3c7d014274e7a"
-    sha256 cellar: :any_skip_relocation, catalina:       "ed4cc6bd295985f2bb51116b561f74973eb3cdd1832d3999eb5b980a4325f3cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4d9c3d4e2896eb6a0f0ef5de869f21aab9decf14220e902140b7bc5d77ae715"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9617912457e05ba7fa67185fcc0ca6d921712b62ba353354e80fba7da982101"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "407f8717804f958f65324b220e6c92a18f07cd5ccd4599ac74003354b4de4027"
+    sha256 cellar: :any_skip_relocation, monterey:       "27231accb54777d1ac428eae3b98f890b4ca50609e1be578046c84181d0f3541"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37578d2b4862f43ecf23620491b4d8bb786765e5ab3c061c7ae1d8d6cc9392f0"
+    sha256 cellar: :any_skip_relocation, catalina:       "f3bcd48ae0db217dc8d2ce0171af8aaf63dc805e204ffe7dd91681053e5ae729"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e48e2f344ee8f5a47d92aa90282d00c27ced0e2afceb07d3b11008e5b1444bd4"
   end
 
   depends_on "go" => :build

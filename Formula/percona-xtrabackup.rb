@@ -1,8 +1,9 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.28-20/source/tarball/percona-xtrabackup-8.0.28-20.tar.gz"
-  sha256 "bfcdd838d19daa98ae8d7ddf7f84ffc89597c67edc9cc50d342f03fcca361616"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.28-21/source/tarball/percona-xtrabackup-8.0.28-21.tar.gz"
+  sha256 "66d7f15f8e61d0231cbc814dff73fc6181ed9aa91d55b14a34a5b32b63e8ca02"
+  revision 1
 
   livecheck do
     url "https://www.percona.com/downloads/Percona-XtraBackup-LATEST/"
@@ -10,12 +11,12 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "adfd6d7b789db4e0de7974ce757159ea3c27c26f87201bee38db70c275615165"
-    sha256 arm64_big_sur:  "91b6f0227d3b516723df2b231638c799fc2e43edad53a43c62624d340ffb6658"
-    sha256 monterey:       "965a581de545270b0d2c7bfeee20b1fc0d1f03db8ab113339004cdfe890b2186"
-    sha256 big_sur:        "3a568f94a042e9bf3ce6505968b0c04bc85b6fdc5c802a324e2b9282082d0d77"
-    sha256 catalina:       "54735177095d07b3eec711b7ba23e410ffb8b2f374392c1de69751a32fc6b36f"
-    sha256 x86_64_linux:   "97d549def9bfeaaa0426ef619f657db902dc7d23f595ccad9c7824302851596e"
+    sha256 arm64_monterey: "2aa0d6fd7ae0854714674b6f16d7963a6c023a2f0cd081768f231a761d0b8e48"
+    sha256 arm64_big_sur:  "322068c296b1db9f345f793f5cb99e4dcc7a8ed7fecc681f637470f45ff5b358"
+    sha256 monterey:       "1a1918124e461ac889b4226ae2c8d372ef0dd0bd8cd4e253060950aee4e60d9a"
+    sha256 big_sur:        "8bd4284d307c64fc6970119c4e38cdf25b773957c3571ea2e09e58a354b3d780"
+    sha256 catalina:       "d21e75d7d40e9e5ad766fc3b688088eb44e25e90f1ee58f1e6fb6199791f9099"
+    sha256 x86_64_linux:   "7df1c67b75fdb808f8e9f10044657d21ce46c076e8e058c3cafe6955e5b8bc13"
   end
 
   depends_on "cmake" => :build
@@ -44,6 +45,8 @@ class PerconaXtrabackup < Formula
     depends_on "gcc" # Requires GCC 7.1 or later
     depends_on "libaio"
   end
+
+  conflicts_with "percona-server", because: "both install a `kmip.h`"
 
   fails_with :gcc do
     version "6"

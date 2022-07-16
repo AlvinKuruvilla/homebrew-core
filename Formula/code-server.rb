@@ -1,16 +1,16 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.4.0.tgz"
-  sha256 "fc65ce860b2a7c6386788b4f36ba9954e1a606c14f2667e805a003dc81c98e28"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.5.0.tgz"
+  sha256 "9c689bfdbf4bcf57317f32b18427b7fe7418d7623ff9faf2107fc513a93eb326"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1341e1f1f673ea30f536117cc77fd1fc42fe5e730a3859561c66d10b4a27c27d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b0c0e00bf6d547fca3e7d9a3270dfcf74c252c06bf3c0adc52769a3b7f2e8b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "6a3ee99ac0ad23bb08b5e5be9a073c09cf29ccc7b190345986fd784e777536f6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d627823d15bc36888d1337e06cc831f0333873ecdb8f3d77e94a20cb42146c8"
-    sha256 cellar: :any_skip_relocation, catalina:       "44d094685f8294767950936aec51833bc5d3b18d0046eaa47e4c1ea80311681e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9791ca5469ed779157ee86a7e037a792ed0216f07574b09b9340838244419bf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd6829248ec4bd703088f405fa12c0362e0b6a63b7004a161d22b42f8df611eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "27b30d37ecf0e2aac1654444d48b8678f1496bfdea51dff02dff2bb04db1d5b9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "282995a9250d4df3d6b0aea36c67ad3ffb7ad300b92546b4e9db8ec8098f8314"
+    sha256 cellar: :any_skip_relocation, catalina:       "e66abbb8d38b8e2d9a75ff96f829364915f4ea3221e5ee04217d387da9682717"
   end
 
   depends_on "bash" => :build
@@ -49,7 +49,7 @@ class CodeServer < Formula
     keep_alive true
     error_log_path var/"log/code-server.log"
     log_path var/"log/code-server.log"
-    working_dir ENV["HOME"]
+    working_dir Dir.home
   end
 
   test do

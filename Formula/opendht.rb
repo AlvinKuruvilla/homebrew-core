@@ -1,17 +1,17 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
   homepage "https://github.com/savoirfairelinux/opendht"
-  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/2.4.3.tar.gz"
-  sha256 "ed7f1a6714c4cf0afc79a736b6f2c91545aaebda1f2f91357fa0e79d2fb97d60"
+  url "https://github.com/savoirfairelinux/opendht/archive/refs/tags/v2.4.8.tar.gz"
+  sha256 "49dcdd12120678f3548a47206e60074ef0f4eb798ca5d213efd5cf1e2d70127b"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "7dabc73c643cb66bb5c10264216acd346fd2dc73400b54a5e7e5334483981a05"
-    sha256 cellar: :any,                 arm64_big_sur:  "56610b9952fef8031f9c13e868c8e630fdacea01e300aa9113ffec92a8d1fcf1"
-    sha256 cellar: :any,                 monterey:       "edb40db3e6c3a54b3f3e224880b409b0e17da7b1c9a4a23706912d06ae0a1c22"
-    sha256 cellar: :any,                 big_sur:        "1547259e336a0c55ac4000ccd462afc66f9c6255dfc100f1461f6aeb1ad55c6a"
-    sha256 cellar: :any,                 catalina:       "0ca0cdce79dda6ed1b98f184efc7f3bdde63d3507a7574c075a07a393f4579e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63553c7fc05cb84f229073a54f124138c5deec54c38f870c9e9eca6eab048e75"
+    sha256 cellar: :any,                 arm64_monterey: "541dae8ea7a93cfccb8edeb075787995e63e370c9d7236152c9d2bc53877cebc"
+    sha256 cellar: :any,                 arm64_big_sur:  "78a224ae7d2c820bd91867bbeed21929acd619fb41101c2f81d4fd26d2fba027"
+    sha256 cellar: :any,                 monterey:       "34b51b2ef9c164b3230d0e8cdd1a0d215d33a7bffc626adb1f5c13024228c432"
+    sha256 cellar: :any,                 big_sur:        "de4b832292a32dcc269bb0d69f1cef07ae361bb2482ff1ad44ea8b7dd797d607"
+    sha256 cellar: :any,                 catalina:       "d05544444c4492dfc8ad26496a15deadb8b45fe9f52ab901193edfd75fc8d1f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0880486fd4139f3dc453a6bc1218bc5bb7f62a0a780099477603c3c3d8d6813c"
   end
 
   depends_on "cmake" => :build

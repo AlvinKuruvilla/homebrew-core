@@ -2,18 +2,18 @@ class Regula < Formula
   desc "Checks infrastructure as code templates using Open Policy Agent/Rego"
   homepage "https://regula.dev/"
   url "https://github.com/fugue/regula.git",
-      tag:      "v2.6.1",
-      revision: "0d40e66c4bec929779b8bb5cde5f22ed1e522ede"
+      tag:      "v2.8.1",
+      revision: "7edd0138d9bc7fb6684366f082954381df99c210"
   license "Apache-2.0"
   head "https://github.com/fugue/regula.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "919052268835599f20ea4b1006a81a9e38a50414a0b4fece905ed9aaf827d9a5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aa7baf097bb2894cf0ac6d2b678b00ff3c45130d4c4024a7a2667a520de35798"
-    sha256 cellar: :any_skip_relocation, monterey:       "3aeee6c0d1003333c98792a133850e1f4405a70716c0543ed74602642c63157d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eb56580f8b9d12667426daab4e0c8f9bd54fe14abc8e4a66dac1c87a570f13bd"
-    sha256 cellar: :any_skip_relocation, catalina:       "ab3ff7b13f7350fea29d003d2fa8b9ac1a0540dcd90d2cd305b6b0cf35c41b61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57c424db92c8e96bd7fcec0213ff370d1cd07c27391bd07656ecf5e235a242a8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9af40c1786bbfae634cf09ced957b83aa877c8baf8a5789e89986f148fecfc6d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68d7a808b2527f2f3534d7356e20d00e71c1c0e265205d4122f4465814409057"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d4cefab85be6651c89829749d257f2a00e1d65853e02f651fbdba53ea8bb9e7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "260502c3d98f3fdca43005b39ef209595a4ca51bad1a1d02c0bb69ce60f22d64"
+    sha256 cellar: :any_skip_relocation, catalina:       "9606e8be8a007b4f2d7d1af1df00c9ae9688958679b32f987bfa1e27f8e0612e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aeeb3da1a70c5a2e9245836b34027c82c87890027ceab6d1db910fc48f2c6b6"
   end
 
   depends_on "go" => :build

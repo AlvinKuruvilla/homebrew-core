@@ -1,9 +1,10 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v1.34.1/netdata-v1.34.1.tar.gz"
-  sha256 "8ea0786df0e952209c14efeb02e25339a0769aa3edc029e12816b8ead24a82d7"
+  url "https://github.com/netdata/netdata/releases/download/v1.35.1/netdata-v1.35.1.tar.gz"
+  sha256 "587f6cce421015f8e0a527e3964a4de8cc17085c354498150bc3ade21606bbf9"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "b480f643be8d68bf638bd90a6d2e2a77d59fd3aaa1d56d0bb82a7720783e2520"
-    sha256 arm64_big_sur:  "920ac3da17182e45a2bcaebc706b82b24c4a7c258c6dc5af01a4e210268389a5"
-    sha256 monterey:       "28b9730ef86558c40460c4c3c36a8a9143ada7f0676b1e36f070a3a30591bc2b"
-    sha256 big_sur:        "1783733330f546387b3b2fd6edaf35758e8d63100ae79e294b80830ae9a00664"
-    sha256 catalina:       "9bf6f768fc0b83b802ff68d6c287d7bef4c63b77f0cedc18f4ca214ad6c3053c"
-    sha256 x86_64_linux:   "df4a8fea0f73ee02c9ca59989027231c706c32ed6e3705f9a871178c8d9cfcc5"
+    sha256 arm64_monterey: "ddbbd55c14f7a4e74c83004fc3099789604b4ba34d855eb2991ebf74ef036d78"
+    sha256 arm64_big_sur:  "42c4c505fc747892a772e44e93fa1d7264e9a6aae709f2d5f202cc1117df6fd2"
+    sha256 monterey:       "21233f9f023623435cb23c57041557e73e33f7482f4a324f619b844fe16b79d6"
+    sha256 big_sur:        "175839bbcabd82c52a3bb0901e8b6ff71c8610fd2e191112d4368cfe0ab64073"
+    sha256 catalina:       "6cbb0945e002aacb602af9b80a1c8ad4a3086f8fa66fcc7ca896d456cb3fdb04"
+    sha256 x86_64_linux:   "7eef3d153b6b62f52eed47f5ab18523534e725459926a1131335bf6908e6aa88"
   end
 
   depends_on "autoconf" => :build
@@ -40,6 +41,9 @@ class Netdata < Formula
   end
 
   def install
+    # https://github.com/protocolbuffers/protobuf/issues/9947
+    ENV.append_to_cflags "-DNDEBUG"
+
     # We build judy as static library, so we don't need to install it
     # into the real prefix
     judyprefix = "#{buildpath}/resources/judy"

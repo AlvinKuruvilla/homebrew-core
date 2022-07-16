@@ -2,18 +2,18 @@ class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https://docs.camunda.io/docs/apis-clients/cli-client/index/"
   url "https://github.com/camunda/zeebe.git",
-      tag:      "8.0.2",
-      revision: "1050d923bd8e891c630458f4f8e47338d8c239bd"
+      tag:      "8.0.4",
+      revision: "d9de58a0cee5a84df87cba1ebc0d4fee64836e7d"
   license "Apache-2.0"
   head "https://github.com/camunda/zeebe.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9a15342dac131f203c492762097002206caa2f6bdb8ca80b2f277c4221a65648"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9a15342dac131f203c492762097002206caa2f6bdb8ca80b2f277c4221a65648"
-    sha256 cellar: :any_skip_relocation, monterey:       "90c95487cae2a5722151573a288d90ab2657c7282f70bef2c86db0e5a0f7dcbe"
-    sha256 cellar: :any_skip_relocation, big_sur:        "90c95487cae2a5722151573a288d90ab2657c7282f70bef2c86db0e5a0f7dcbe"
-    sha256 cellar: :any_skip_relocation, catalina:       "90c95487cae2a5722151573a288d90ab2657c7282f70bef2c86db0e5a0f7dcbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ec785c4664eb7cfefa488c40bc42fea53d5bce70baf909c7a483e8849b77e40"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "012f352b14307801c64f5aeecf130d3c0baf4a5a069ea13e90a04dd97409dc72"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "012f352b14307801c64f5aeecf130d3c0baf4a5a069ea13e90a04dd97409dc72"
+    sha256 cellar: :any_skip_relocation, monterey:       "060ccc72224c78befd5f2ba3a4063fff7c7fe9c424cc297addd143fe7f019990"
+    sha256 cellar: :any_skip_relocation, big_sur:        "060ccc72224c78befd5f2ba3a4063fff7c7fe9c424cc297addd143fe7f019990"
+    sha256 cellar: :any_skip_relocation, catalina:       "060ccc72224c78befd5f2ba3a4063fff7c7fe9c424cc297addd143fe7f019990"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adcb93bd799afe4845a92c847a46e0ed89c4fd9fbf67c7121fb05d671c252615"
   end
 
   depends_on "go" => :build
@@ -34,9 +34,9 @@ class Zbctl < Formula
   test do
     # Check status for a nonexistent cluster
     status_error_message =
-      "Error: rpc error: code =" \
-      " Unavailable desc = connection error:" \
-      " desc = \"transport: Error while dialing dial tcp 127.0.0.1:26500: connect: connection refused\""
+      "Error: rpc error: code = " \
+      "Unavailable desc = connection error: " \
+      "desc = \"transport: Error while dialing dial tcp 127.0.0.1:26500: connect: connection refused\""
     output = shell_output("#{bin}/zbctl status 2>&1", 1)
     assert_match status_error_message, output
     # Check version

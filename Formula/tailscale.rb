@@ -2,17 +2,17 @@ class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
   homepage "https://tailscale.com"
   url "https://github.com/tailscale/tailscale.git",
-      tag:      "v1.24.2",
-      revision: "dce2409b15837f30885405b8b1d27e7b7fd6bf7a"
+      tag:      "v1.26.2",
+      revision: "5a60f1ffe3741c55eb9637ddd2f20157d164f511"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "304a865229281c6aeac6dd5fbb8f738cf8e3ea63e210b3712fb0d3dc8eafa645"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0479d0262bc08daf710dbfaf2cec585ff5145fc56f5678acb7237bf4b2ab34fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ef727e23b6d19d62e19bf2fb982e80cd3908c60be75c6f0652ac8a29bfb25b5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6cfc9d3d908a2260ebae6442b911850482816447b0d50765ddd66dc5f4548de3"
-    sha256 cellar: :any_skip_relocation, catalina:       "8a8678b57e7e6951dd31f87724632125fde1928d056c5e5765d4a383787e77c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43c783ba944407c1eadd9f19317222b8eabab6b866cd25f86f7a68b0cf275022"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "518b0f82ec8d435e468e1c68d1395893002a9b4d52382733ce7a351a72bb8b36"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e6b7ef10b516ebb9c810cd3c673d6e9a112127c0a0c8f1eac6fda4118f5fa8ed"
+    sha256 cellar: :any_skip_relocation, monterey:       "f32ef64029fddcb5e6589ed5639dc81f26363fcbdd06ee2876b242bfaa170fca"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ef0c75f20b897e7d8887d28375e43286c191cc21169f66635ffcc3353065ea0a"
+    sha256 cellar: :any_skip_relocation, catalina:       "7bc441f49b2ed6d6707565e69b96551bdcfbae51fc2e9d011327e608692cf3a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2442c64c79caf7f3b06d15f708d6efc54b24f797fc50358e69664a6eece9d0f9"
   end
 
   depends_on "go" => :build
@@ -27,6 +27,13 @@ class Tailscale < Formula
     ].join(" ")
     system "go", "build", *std_go_args(ldflags: ldflags), "tailscale.com/cmd/tailscale"
     system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"tailscaled", "tailscale.com/cmd/tailscaled"
+  end
+
+  service do
+    run opt_bin/"tailscaled"
+    keep_alive true
+    log_path var/"log/tailscaled.log"
+    error_log_path var/"log/tailscaled.log"
   end
 
   test do

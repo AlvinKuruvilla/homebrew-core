@@ -1,8 +1,8 @@
 class Gmsh < Formula
   desc "3D finite element grid generator with CAD engine"
   homepage "https://gmsh.info/"
-  url "https://gmsh.info/src/gmsh-4.10.1-source.tgz"
-  sha256 "d086d581aa27e491a35fead2b9753d4c2065e67984af12a891d8541391209bf9"
+  url "https://gmsh.info/src/gmsh-4.10.5-source.tgz"
+  sha256 "cc030c5aee65e7d58f850b8b6f55a68945c89bc871f94e1239279f5a210fc4ea"
   license "GPL-2.0-or-later"
   head "https://gitlab.onelab.info/gmsh/gmsh.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Gmsh < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "d6500fa8dd44864115eb53849c0281068df2fa88b0a78994a0adaebb478cf2f5"
-    sha256 cellar: :any,                 arm64_big_sur:  "f34436491b4b9ca21383b517c65b8f39e27d37a2fce3f48199db72ae4144f1b6"
-    sha256 cellar: :any,                 monterey:       "e32b777076b17f559cf7added72bbb47599c0a93d2e64d11308cc6bb3b77c689"
-    sha256 cellar: :any,                 big_sur:        "53c572c8215803c87b7318593b9bdfe6235f543ee8a0a20884a7a42e956b1fad"
-    sha256 cellar: :any,                 catalina:       "2fa85820cf20997b957f9fd52a340b7a64ac8973d21f92e35ed284d2309f4381"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc374c7e645f4cc3a069ed68d16d95b4160bf7a3fe4e807cd49077a2d2972356"
+    sha256 cellar: :any,                 arm64_monterey: "0289ba15e1a86afa889b673da095de28effddd2b1d5ed15f93fe124eb1a3f157"
+    sha256 cellar: :any,                 arm64_big_sur:  "7ac80bc9a7a3677a01914e5411c5dc649fc4b063f08cab4babd3fc3e0fd653ce"
+    sha256 cellar: :any,                 monterey:       "4e627ba55975476f8427695db5e75d71ee53aa343243af96195257d610e65db0"
+    sha256 cellar: :any,                 big_sur:        "d3fd5dd366f9b3553831aaef3c65da7c8fd889a38ff8549bc26b4240c8de633e"
+    sha256 cellar: :any,                 catalina:       "c5da13092830a31cd7ad5f0d54bbab303ef80a781e53c5eeb6f3cfb01eaca0c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a87c712168a4ecccac6ba730000ed592915cffaf0fa1e8fd75e1d4d98eb99ae"
   end
 
   depends_on "cmake" => :build

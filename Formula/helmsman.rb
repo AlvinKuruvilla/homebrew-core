@@ -2,18 +2,18 @@ class Helmsman < Formula
   desc "Helm Charts as Code tool"
   homepage "https://github.com/Praqma/helmsman"
   url "https://github.com/Praqma/helmsman.git",
-      tag:      "v3.9.0",
-      revision: "4ff303ac0b0a2abe43cd01a17765b4d86ffec2b5"
+      tag:      "v3.12.0",
+      revision: "981c30db4d85918fa8912944d0cc9a383b1bb522"
   license "MIT"
   head "https://github.com/Praqma/helmsman.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55a6987b22948a149f9b95bc2187dc1c07033cdedf09b4b67b847b781d2968c8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ce15dcc5ef543f1faf389cf2a6a84e3af4f2e0cedf3b21dbaec044513e493fa9"
-    sha256 cellar: :any_skip_relocation, monterey:       "aafc7154901585cf692d4266eed7f78a040101e650d312540132d65ce0a4753e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4c63a491922fcef87f97395291553e3eef49486a63021f5ece9f67dfd3fb63e1"
-    sha256 cellar: :any_skip_relocation, catalina:       "3bd9a345adac6f6977eda54980ad75da4c1785fe24e4958ab7e5ff549b3735e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a015e7da0633081b1be20da14f64b7452114d31a291cba139c2e32e1ed851beb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "75b7d221b0e0c7173e20046e0ec77bcdabb5d763041d8fc47b4995790314dced"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8692d7b607a83476108ae63ff14ab573d607913ca54b5e4f797fe7210e692f93"
+    sha256 cellar: :any_skip_relocation, monterey:       "eaf8895969daab38b3dc8fdaa22948df366028b3caeb869a65f8899b412adc2a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0f8fd77200bde73a98bcf287a5505aff8d520f94f71257ee88907db3e6098b06"
+    sha256 cellar: :any_skip_relocation, catalina:       "2e4c7d22522009eae87aa3327cc85b78482d1e7fd0a2e80212d8065a348fe7c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2c0f7c45c760442b7948517938fe2c4508df1fd3ce770e0cef4ff4ae589b4ad"
   end
 
   depends_on "go" => :build
@@ -23,12 +23,16 @@ class Helmsman < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/helmsman"
     pkgshare.install "examples/example.yaml"
+    pkgshare.install "examples/job.yaml"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/helmsman version")
+    ENV["ORG_PATH"] = "brewtest"
+    ENV["VALUE"] = "brewtest"
 
-    output = shell_output("#{bin}/helmsman --apply -f #{pkgshare}/example.yaml 2>&1")
+    output = shell_output("#{bin}/helmsman --apply -f #{pkgshare}/example.yaml 2>&1", 1)
     assert_match "helm diff not found", output
+
+    assert_match version.to_s, shell_output("#{bin}/helmsman version")
   end
 end

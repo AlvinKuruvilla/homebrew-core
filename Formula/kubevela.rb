@@ -2,18 +2,18 @@ class Kubevela < Formula
   desc "Application Platform based on Kubernetes and Open Application Model"
   homepage "https://kubevela.io"
   url "https://github.com/kubevela/kubevela.git",
-      tag:      "v1.3.3",
-      revision: "45e1de19dc736b10b3eb2d908d809210f470b24f"
+      tag:      "v1.4.6",
+      revision: "dfe12cd9ca2c7c39d1c25e9d3fb31b20bc72f8ce"
   license "Apache-2.0"
   head "https://github.com/kubevela/kubevela.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cad332ae13671750a609b10b5c4b0cad36f6e715019023ebcad010123f721789"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cad332ae13671750a609b10b5c4b0cad36f6e715019023ebcad010123f721789"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbcca5ed1c5aeaec3453b9dd39ef8cf95467b3db64671bdb58062d4489869fd8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bbcca5ed1c5aeaec3453b9dd39ef8cf95467b3db64671bdb58062d4489869fd8"
-    sha256 cellar: :any_skip_relocation, catalina:       "bbcca5ed1c5aeaec3453b9dd39ef8cf95467b3db64671bdb58062d4489869fd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0d4ec51b1bb48ce2d247ec1ad81d4f9e6cb9aa564d672d47d59e58a3da125ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ada70aba5ae14e21a70683c931ea407c60262f1757c504f39381474f141f3d03"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ada70aba5ae14e21a70683c931ea407c60262f1757c504f39381474f141f3d03"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ef17401fb3341fde2d808563e923c5d25598646a48665ec23dc4757f088ecee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6ef17401fb3341fde2d808563e923c5d25598646a48665ec23dc4757f088ecee"
+    sha256 cellar: :any_skip_relocation, catalina:       "6ef17401fb3341fde2d808563e923c5d25598646a48665ec23dc4757f088ecee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "895f2464ec3dd44ffbe2233482e325ccbfdbac4bbc2a6241f64c101feb775ab8"
   end
 
   depends_on "go" => :build
@@ -22,8 +22,8 @@ class Kubevela < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
-      -X github.com/kubevela/kubevela/version.VelaVersion=#{version}
-      -X github.com/kubevela/kubevela/version.GitRevision=#{Utils.git_head}
+      -X github.com/oam-dev/kubevela/version.VelaVersion=#{version}
+      -X github.com/oam-dev/kubevela/version.GitRevision=#{Utils.git_head}
     ]
 
     system "go", "build", *std_go_args(output: bin/"vela", ldflags: ldflags), "./references/cmd/cli"

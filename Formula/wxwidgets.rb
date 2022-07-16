@@ -1,8 +1,8 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.6/wxWidgets-3.1.6.tar.bz2"
-  sha256 "4980e86c6494adcd527a41fc0a4e436777ba41d1893717d7b7176c59c2061c25"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.0/wxWidgets-3.2.0.tar.bz2"
+  sha256 "356e9b55f1ae3d58ae1fed61478e9b754d46b820913e3bfbc971c50377c1903a"
   license "wxWindows"
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Wxwidgets < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "962e7804d50391f7c06dd28d408e669660b5625224a77274d9c0e6516e29f0ef"
-    sha256 cellar: :any,                 arm64_big_sur:  "bf9794b3723a15fcfd233acc428e8fa98dfd01b8577e42ee8147b3871a01d844"
-    sha256 cellar: :any,                 monterey:       "db096a4dda3c85512a4e5770d03baaf3f3832850171a147a641c8db1d47dcb8d"
-    sha256 cellar: :any,                 big_sur:        "7b040d2ff79caf2c60caa0bdb1ff1146a383e21815ad4cfbdfa0b61cf76d4997"
-    sha256 cellar: :any,                 catalina:       "4b68e521f5b54b216e378f5670f8abcae1a55bf82ea6024d6a25952ef77c0d08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8f4fb67e72ccc819f46184c342c8d9088b418b64b55591bb0602cb5389ed76b"
+    sha256 cellar: :any,                 arm64_monterey: "91183b19cfa6ad9e8cf6be3317acf8924ec801461412ddc85ff01c842b674249"
+    sha256 cellar: :any,                 arm64_big_sur:  "008eee5e5ad865606071ff85498b15f8da51a6ffb1e4b78e4152be48ee85fe9b"
+    sha256 cellar: :any,                 monterey:       "adb7e89f3c6fcae3889ea3461a1e8ee75f23119aa4c71393e018d6e1cc4d5640"
+    sha256 cellar: :any,                 big_sur:        "f77eb837308ebef4ac7dbbf0b8c0d3ae858293f83e1cdfe4ac80e84172f3a5ba"
+    sha256 cellar: :any,                 catalina:       "5bd8bbab2a4105045adaadf1f9cc95faf746746ca92a0d79fd0605a04b3a2837"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df9a542046064054f9032bb277ec82329ee3f821332eb300b2d74a7da72e0ea6"
   end
 
   depends_on "jpeg"

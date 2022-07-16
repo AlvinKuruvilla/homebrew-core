@@ -3,17 +3,17 @@ require "language/node"
 class BashLanguageServer < Formula
   desc "Language Server for Bash"
   homepage "https://github.com/bash-lsp/bash-language-server"
-  url "https://registry.npmjs.org/bash-language-server/-/bash-language-server-2.1.0.tgz"
-  sha256 "4efd293f40cc9238928fd9ed08e9348ee2b5d5b8e5b45c7c204de046273f59b0"
+  url "https://registry.npmjs.org/bash-language-server/-/bash-language-server-3.0.5.tgz"
+  sha256 "c915e2b962c57357131a484ee9ce71cffde25172266bfe1078fda11b7938bd68"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "195d388a08691cd1afc863809b469bf77a086f3bcbc755edaa992e17876fd882"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "195d388a08691cd1afc863809b469bf77a086f3bcbc755edaa992e17876fd882"
-    sha256 cellar: :any_skip_relocation, monterey:       "2cadb290740105a86dabb3f2b0762c0b77aff78a1c747bb4bb511ca8fb8c9c97"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2cadb290740105a86dabb3f2b0762c0b77aff78a1c747bb4bb511ca8fb8c9c97"
-    sha256 cellar: :any_skip_relocation, catalina:       "2cadb290740105a86dabb3f2b0762c0b77aff78a1c747bb4bb511ca8fb8c9c97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "195d388a08691cd1afc863809b469bf77a086f3bcbc755edaa992e17876fd882"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "92ba17d5cf63c0244861f8dec67ba9f122b0d1bdf0e841850448cb1d04c42da6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "92ba17d5cf63c0244861f8dec67ba9f122b0d1bdf0e841850448cb1d04c42da6"
+    sha256 cellar: :any_skip_relocation, monterey:       "c65e3487c21c20e6e8ad1ad4b4292fecae275a6452c9b7b9e47ad7e2943b0f1e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c65e3487c21c20e6e8ad1ad4b4292fecae275a6452c9b7b9e47ad7e2943b0f1e"
+    sha256 cellar: :any_skip_relocation, catalina:       "c65e3487c21c20e6e8ad1ad4b4292fecae275a6452c9b7b9e47ad7e2943b0f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92ba17d5cf63c0244861f8dec67ba9f122b0d1bdf0e841850448cb1d04c42da6"
   end
 
   depends_on "node"

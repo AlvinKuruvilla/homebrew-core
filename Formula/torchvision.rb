@@ -1,8 +1,8 @@
 class Torchvision < Formula
   desc "Datasets, transforms, and models for computer vision"
   homepage "https://github.com/pytorch/vision"
-  url "https://github.com/pytorch/vision/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "99e6d3d304184895ff4f6152e2d2ec1cbec89b3e057d9c940ae0125546b04e91"
+  url "https://github.com/pytorch/vision/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "2fe9139150800820d02c867a0b64b7c7fbc964d48d76fae235d6ef9215eabcf4"
   license "BSD-3-Clause"
   revision 1
 
@@ -12,18 +12,22 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "3e1c87431e9cfeecbf3460a2301e00452963ebbf8982be41ba2a19e9543882d3"
-    sha256 cellar: :any,                 arm64_big_sur:  "b832c2dd9e48f9ccdbf4af596b1e4ca74fdb0bf04f5480488b0f8b8f0fe2b353"
-    sha256 cellar: :any,                 monterey:       "01cada7a36876876e84ebc1fb1b29a3c3ecf9eb22e6f5896dd3b655edc5eb3f4"
-    sha256 cellar: :any,                 big_sur:        "486dd6d545f2be3814008a28aba4d9a689574c822753a41b7fed7e1414220242"
-    sha256 cellar: :any,                 catalina:       "ec0d214ed5005eca8efed8b57f0d5ebfe5f39a52fb0931714333b64f4b8762c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "137e7864ef5b43e6ec55614ccfac9d5a6e93775f2dc08c0397eca1159e74ee41"
+    sha256 cellar: :any,                 arm64_monterey: "a62246f4fc7b3a9ae5c60fa639acbcb5e816bceafd8012d9c8b9043a4ab2fab9"
+    sha256 cellar: :any,                 arm64_big_sur:  "eeaf9f79fe88550ffcaceb197da8988d790be5ed9615a72782a29298d11486fe"
+    sha256 cellar: :any,                 monterey:       "ae5f08fc5d3ef71123240741bc0d52ca9fdf0b1172c49774b602aa8e1c2f3748"
+    sha256 cellar: :any,                 big_sur:        "0e2007b37beb9e4e93109d49c0ecd9a10b8693f4cc9321bc31c158cbd78d5d1b"
+    sha256 cellar: :any,                 catalina:       "a4b28b4758ef43a587ab8b2256d90e5226494e167c45f2553368b8fdd7e3c01a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75d663161fc5639845c3c8193215ebc54af2842790ab6fd2fab193062f0c3460"
   end
 
   depends_on "cmake" => :build
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtorch"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -45,11 +49,22 @@ class Torchvision < Formula
       }
     EOS
     libtorch = Formula["libtorch"]
-    system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test",
+    openmp_flags = if OS.mac?
+      libomp = Formula["libomp"]
+      %W[
+        -Xpreprocessor -fopenmp
+        -I#{libomp.opt_include}
+        -L#{libomp.opt_lib} -lomp
+      ]
+    else
+      %w[-fopenmp]
+    end
+    system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test", *openmp_flags,
                     "-I#{libtorch.opt_include}",
                     "-I#{libtorch.opt_include}/torch/csrc/api/include",
                     "-L#{libtorch.opt_lib}", "-ltorch", "-ltorch_cpu", "-lc10",
                     "-L#{lib}", "-ltorchvision"
+
     system "./test"
   end
 end

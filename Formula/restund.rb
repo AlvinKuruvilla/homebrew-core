@@ -3,7 +3,7 @@ class Restund < Formula
   homepage "https://web.archive.org/web/20200427184619/www.creytiv.com/restund.html"
   url "https://sources.openwrt.org/restund-0.4.12.tar.gz"
   sha256 "3170441dc882352ab0275556b6fc889b38b14203d936071b5fa12f39a5c86d47"
-  revision 1
+  revision 3
 
   livecheck do
     url "https://sources.openwrt.org/"
@@ -11,12 +11,12 @@ class Restund < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "6aa0911dbabce9a636833a9bde561cadfcd7b9883e5874aec60adf1f83753581"
-    sha256 arm64_big_sur:  "5a0d9ab5db469f98ac2d2431af51359d168aeab91a25a1559ed5cf0c2cfd37f2"
-    sha256 monterey:       "0c8481d09c3d2a63e18b0047a5fb9bf650f227b68bddda2686020f2487c35ed6"
-    sha256 big_sur:        "93efe2fe78b01fd2f14503cf61f246aff7b150cbde38d07d5ad3e08617bf88c6"
-    sha256 catalina:       "261e6c73791b1663476bc26bc35701ff7f480a953f17a6238e53527693d80aef"
-    sha256 x86_64_linux:   "074acd4ade9a58189e873e29857f056f6ca3e4f10aad2231a9361dc5a8812032"
+    sha256 arm64_monterey: "85bc704bc8c9dbcb8d639da5e88396a2b33a7c05498da8c0fd7a41d9abe87148"
+    sha256 arm64_big_sur:  "18839968d135c3ec784b9afe2c7de51519aace1c7a4afb5ea814a1c3f68f02a9"
+    sha256 monterey:       "7f3a3b35e8949a23b3013354b54a9943c02d04ace99398707222813095e91b8b"
+    sha256 big_sur:        "7d80a6fbc29a971b6f4b0e7407f316aa4ba07d6ac3451f67734d42b1fc632925"
+    sha256 catalina:       "5983efae04ea29414da9695d9fe28f9e98697e47c200db55f180bcd56afc0726"
+    sha256 x86_64_linux:   "983eb96c587eb079ea0ca3f43c46c57af85f409b8c11abc84e7405ed4e51c15a"
   end
 
   depends_on "libre"

@@ -1,23 +1,23 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://www.imagemagick.org/download/releases/ImageMagick-7.1.0-33.tar.xz"
-  sha256 "13abdfd97e0af5e14c6bb379aa96d6b90dab0fae08714288fbc7c6545ba5c8cc"
+  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.0-43.tar.xz"
+  sha256 "5d52aaed5496a193176c443052bac32536230b9a73a9b7bd5f0f794ddddafadd"
   license "ImageMagick"
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
-    url "https://download.imagemagick.org/ImageMagick/download/"
+    url "https://imagemagick.org/archive/"
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_monterey: "bf1a85491f0229a4b83582ae02e755f986d908a37421b178247937ea430f1604"
-    sha256 arm64_big_sur:  "eb5d214eaed310ac5a2397fa21c3aa4c0cc301e7f29b6c933a3702296f6074ce"
-    sha256 monterey:       "4e3eeaf334be0e12d5fe15800cfdb214127538af7cb3279e199a899648e41736"
-    sha256 big_sur:        "e7a4a7b40371579a9f01dfe9284515aa778159ddd9f72c1ebc6f6cebbdcbe03d"
-    sha256 catalina:       "2668d494cfcb4e2e0d638a2835b1ab5b56f15e19f10e85e9aaf141bfcb163257"
-    sha256 x86_64_linux:   "747ca0055a57c95d473598997909d44b5fde5bf57eed754daaaf1f2017cc200e"
+    sha256 arm64_monterey: "0400965c5e3292014220eccc4c86c781322de2656a73521223dad47a5995d9d2"
+    sha256 arm64_big_sur:  "c8b12081678eddd29bdd48e64d9920159f0ddc4c35e9b5dabc4f32b954b4d111"
+    sha256 monterey:       "7ba74e818a3c320d0246d9d01f063ae1acb1bc7b9682afdb8477a3f9760cf003"
+    sha256 big_sur:        "52a890f084a4dbe6da65b9a93d626b53d970ebccab4b5e7ba72a6f025be07f49"
+    sha256 catalina:       "f1f5c94945b0da6263fd55f206eebf04abfb24745f395f7574b81e2a03e782c5"
+    sha256 x86_64_linux:   "2b7e46bd4f6282f30ae1bd0bbe700460a057df23ea1697f02fd111cca5188f39"
   end
 
   depends_on "pkg-config" => :build
@@ -26,7 +26,6 @@ class Imagemagick < Formula
   depends_on "jpeg"
   depends_on "libheif"
   depends_on "liblqr"
-  depends_on "libomp"
   depends_on "libpng"
   depends_on "libraw"
   depends_on "libtiff"
@@ -41,11 +40,18 @@ class Imagemagick < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libomp"
+  end
+
   on_linux do
+    depends_on "gcc"
     depends_on "libx11"
   end
 
   skip_clean :la
+
+  fails_with gcc: "5" # ghostscript is built with GCC
 
   def install
     # Avoid references to shim
@@ -74,12 +80,16 @@ class Imagemagick < Formula
       "--without-pango",
       "--without-wmf",
       "--enable-openmp",
-      "ac_cv_prog_c_openmp=-Xpreprocessor -fopenmp",
-      "ac_cv_prog_cxx_openmp=-Xpreprocessor -fopenmp",
-      "LDFLAGS=-lomp -lz",
     ]
-
-    args << "--without-x" if OS.mac?
+    if OS.mac?
+      args += [
+        "--without-x",
+        # Work around "checking for clang option to support OpenMP... unsupported"
+        "ac_cv_prog_c_openmp=-Xpreprocessor -fopenmp",
+        "ac_cv_prog_cxx_openmp=-Xpreprocessor -fopenmp",
+        "LDFLAGS=-lomp -lz",
+      ]
+    end
 
     # versioned stuff in main tree is pointless for us
     inreplace "configure", "${PACKAGE_NAME}-${PACKAGE_BASE_VERSION}", "${PACKAGE_NAME}"

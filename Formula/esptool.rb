@@ -3,17 +3,17 @@ class Esptool < Formula
 
   desc "ESP8266 and ESP32 serial bootloader utility"
   homepage "https://github.com/espressif/esptool"
-  url "https://files.pythonhosted.org/packages/de/57/08750ca0d19114237ff5e2da6a945deed888e3774c95acb577387ed11bec/esptool-3.3.1.tar.gz"
-  sha256 "f9ade989a7f5f19bfc60e11925c45f470b8155c7ecf1a37bc8c31380d5dd07b8"
+  url "https://files.pythonhosted.org/packages/bb/d5/9d000803520b68fd9f6447cd7c15352a79984196f57f0519839b0f80fb8f/esptool-4.1.tar.gz"
+  sha256 "51a41655187780cb802a5827fab68a3db0d6206330560459c55fcf0e222f277f"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "fb5040cd91b9f22bcc63fb9fb521a98ec3eaaacf8791ce8bfbaf09df3b2131c7"
-    sha256 cellar: :any,                 arm64_big_sur:  "7466516c2966c2423f491025cf722344d57b00299978845235fb113730e5ce36"
-    sha256 cellar: :any,                 monterey:       "debbef405517b073e0eb7091fbabed741da24dcc142e1ce06d6b8143f48b84e8"
-    sha256 cellar: :any,                 big_sur:        "4978d7fd66eebc039b2db6eed738e37f6927936e377f7da3c12965b1022d5bbf"
-    sha256 cellar: :any,                 catalina:       "ab1c9c52ec001e1e44fa34ad287cf3aca209a2965d7382fb40f4902a73c387c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07351dc1fc2a8530141a1f4298f639eec2497109950b37a7b6a348083afd86d0"
+    sha256 cellar: :any,                 arm64_monterey: "9c8c4cf36cf77ed0d2035351fe709e0bf2932f227995802e7d1abb310cc50ceb"
+    sha256 cellar: :any,                 arm64_big_sur:  "938fb8c8cf7d99506aa3ed37671881133354ad7a57f68644904b700ccb0874b1"
+    sha256 cellar: :any,                 monterey:       "139db1915c1438f02a93c4b904db9752a0ca4a91ca6a345a89afdf8a5f1a7272"
+    sha256 cellar: :any,                 big_sur:        "b645b2d07a2be03536caefbe34fd7fa0c9a51412df803a7c4a7b92be7cf1a71e"
+    sha256 cellar: :any,                 catalina:       "4ee4453cbb96da0f0474c94693aa31f070250261e6f1e8957f6ab9c7ef11c048"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b975efcac04e9b487b8d2edddb05a8be985fd10633554a86e96405e1f279f3d4"
   end
 
   depends_on "rust" => :build
@@ -70,7 +70,7 @@ class Esptool < Formula
       6QIAICyAEEAAgBBAMAAAAFDDAAAAgP4/zC4AQMwkAEAh/P8SwfAJMQH8/8AAACH5/wH6/8AAAAb//wAABvj/AACA/j8QAAAASGVsbG8gd29ybGQhCgAAAAAAAAAAAAAD
     EOS
 
-    result = shell_output("#{bin}/esptool.py image_info #{testpath}/helloworld-esp8266.bin")
+    result = shell_output("#{bin}/esptool.py --chip esp8266 image_info #{testpath}/helloworld-esp8266.bin")
     assert_match "4010802c", result
   end
 end
